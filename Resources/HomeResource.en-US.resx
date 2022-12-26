@@ -118,6 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HomeSidebar_Nav_Assignments" xml:space="preserve">
-    <value />
+    <value>Assignments</value>
+  </data>
+  <data name="HomeSidebar_Nav_Customers" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="HomeSidebar_Nav_Stores" xml:space="preserve">
+    <value>Stores</value>
+  </data>
+  <data name="HomeSidebar_Nav_Manufacturers" xml:space="preserve">
+    <value>Manufacturers</value>
+  </data>
+  <data name="HomeSidebar_Nav_Winterstorage" xml:space="preserve">
+    <value>Winter storage</value>
+  </data>
+  <data name="HomeSidebar_Divider_Setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="HomeSidebar_Nav_UserSetup" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="HomeSidebar_Nav_UserSecurity" xml:space="preserve">
+    <value>User security</value>
+  </data>
+  <data name="HomeSidebar_Nav_EmailSetup" xml:space="preserve">
+    <value>Email setup</value>
+  </data>
+  <data name="HomeSidebar_Nav_FileGallery" xml:space="preserve">
+    <value>File gallery</value>
+  </data>
+  <data name="HomeSidebar_Divider_Tasks" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="HomeSidebar_Divider_Functions" xml:space="preserve">
+    <value>Functions</value>
   </data>
 </root>

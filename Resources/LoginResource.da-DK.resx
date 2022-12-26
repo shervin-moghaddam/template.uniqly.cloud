@@ -180,4 +180,7 @@
   <data name="UserName_EnterUserName" xml:space="preserve">
     <value>Indtast dit brugernavn</value>
   </data>
+  <data name="Password_EnterPassword" xml:space="preserve">
+    <value>Indtast password</value>
+  </data>
 </root>

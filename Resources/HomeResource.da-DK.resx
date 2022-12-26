@@ -120,4 +120,37 @@
   <data name="HomeSidebar_Nav_Assignments" xml:space="preserve">
     <value>Opgaver</value>
   </data>
+  <data name="HomeSidebar_Nav_Customers" xml:space="preserve">
+    <value>Kunder</value>
+  </data>
+  <data name="HomeSidebar_Nav_Stores" xml:space="preserve">
+    <value>Byggemarkeder</value>
+  </data>
+  <data name="HomeSidebar_Nav_Manufacturers" xml:space="preserve">
+    <value>Producenter</value>
+  </data>
+  <data name="HomeSidebar_Nav_Winterstorage" xml:space="preserve">
+    <value>Vinter opbevaring</value>
+  </data>
+  <data name="HomeSidebar_Divider_Setup" xml:space="preserve">
+    <value>Opsætning</value>
+  </data>
+  <data name="HomeSidebar_Nav_UserSetup" xml:space="preserve">
+    <value>Brugere</value>
+  </data>
+  <data name="HomeSidebar_Nav_UserSecurity" xml:space="preserve">
+    <value>Adgangsniveauer</value>
+  </data>
+  <data name="HomeSidebar_Nav_EmailSetup" xml:space="preserve">
+    <value>Emails</value>
+  </data>
+  <data name="HomeSidebar_Nav_FileGallery" xml:space="preserve">
+    <value>Fil galleri</value>
+  </data>
+  <data name="HomeSidebar_Divider_Tasks" xml:space="preserve">
+    <value>Ordrer</value>
+  </data>
+  <data name="HomeSidebar_Divider_Functions" xml:space="preserve">
+    <value>Funktioner</value>
+  </data>
 </root>

@@ -6,4 +6,5 @@ public class ProjectSetupClass
     public string CustomerNo { get; set; }
     public string DBName { get; set; }
     public string WebsiteTitle { get; set; }
+    public string Version { get; set; }
 }

@@ -181,6 +181,6 @@
     <value>Enter username</value>
   </data>
   <data name="Password_EnterPassword" xml:space="preserve">
-    <value />
+    <value>Enter password</value>
   </data>
 </root>
