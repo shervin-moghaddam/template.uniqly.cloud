@@ -1,0 +1,58 @@
+$main_text: #253789;
+
+$main_blue: rgb(21, 129, 184);
+$main_blue-hover: rgb(24, 147, 209);
+
+$main_bodytext: #061f45;
+
+$main_orange: rgb(236, 100, 50);
+$main_orange-hover: rgb(255, 127, 81);
+
+$blue_heading: rgb(58, 175, 195);
+$bluedark_heading: rgb(10, 92, 123);
+
+$purple_text: rgb(160, 43, 147);
+$purple_text-hover: rgb(179, 49, 163);
+
+$green_heading: rgb(59, 183, 132);
+$main_green: rgb(16, 188, 161);
+$main_green-hover: rgb(17, 207, 179);
+
+
+$product_green: $main_green;
+$product_blue: rgb(4, 178, 219);
+$product_darkblue: rgb(0, 91, 124);
+
+$premium-blue: rgb(58, 175, 195);
+$premium-blue-hover: rgb(66, 195, 218);
+$enterprise-blue: $product-darkblue;
+$enterprise-blue-hover: rgb(0, 122, 167);
+
+$light-green-hover: rgb(242, 250, 247);
+$light-blue-hover: rgb(242, 250, 251);
+$light-darkblue-hover: rgb(239, 244, 246);
+
+
+@mixin green-heading {
+    color: $green_heading
+}
+
+@mixin blue-heading {
+    color: $blue_heading;
+}
+
+@mixin blue-dark-heading {
+    color: $bluedark_heading;
+}
+
+.green-heading {
+    @include green-heading;
+}
+
+.blue-heading {
+    @include blue-heading;
+}
+
+.blue-dark-heading {
+    @include blue-dark-heading;
+}

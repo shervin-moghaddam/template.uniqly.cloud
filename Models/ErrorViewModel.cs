@@ -1,4 +1,4 @@
-namespace robotmanden.uniqly.cloud.Models;
+namespace robotmanden.Models;
 
 public class ErrorViewModel
 {

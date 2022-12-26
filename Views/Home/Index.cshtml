@@ -1,8 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    <div class="main-wrapper">
+    
+    @await Component.InvokeAsync("HomeSidebar")
+     <div class="main-body">
+      @await Component.InvokeAsync("HomeTopbar")
+        <!--*********************************
+        content  body
+        **********************************-->
+        <div class="content-body"></div>
+    </div>
+    <script src="js/sidebar.js"></script>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

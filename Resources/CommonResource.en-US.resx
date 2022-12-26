@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="ModelValidation_Decimal_WrongInput" xml:space="preserve">
+        <value>{{value}} is not a valid amount.</value>
+    </data>
+    <data name="SaveChanges" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+    <data name="ChangesSaved" xml:space="preserve">
+    <value>Changes has been saved</value>
+  </data>
+    <data name="ChangesNOTSaved" xml:space="preserve">
+    <value>An error has occured! Changes has not been saved.</value>
+  </data>
+    <data name="Autosave" xml:space="preserve">
+    <value>Auto-save</value>
+  </data>
+    <data name="Loading_PleaseWait2" xml:space="preserve">
+    <value>Please wait..</value>
+  </data>
+    <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+    <data name="ModelValidation_Decimal_WrongInput" xml:space="preserve">
+    <value>{{value}} is not a valid amount.</value>
+  </data>
+    <data name="ModelValidation_String_TooManyChars" xml:space="preserve">
+    <value>Please type a maximum of {{maxlength}} characters.</value>
+  </data>
+  <data name="ModelValidation_String_CannotBeEmpty" xml:space="preserve">
+    <value>This field cannot be empty</value>
+  </data>
+    <data name="ModelValidation_Decimal_AmountTooHigh" xml:space="preserve">
+    <value>Amount must be less than {{maxvalue}}.</value>
+  </data>
+    <data name="ModelValidation_Decimal_AmountTooLow" xml:space="preserve">
+    <value>Amount cannot be less than {{minvalue}}.</value>
+  </data>
+    <data name="ErrorMessage_SomethingWentWrong" xml:space="preserve">
+    <value>Something went wrong!</value>
+  </data>
+    <data name="ModelValidation_String_InvalidChars" xml:space="preserve">
+    <value>Invalid characters.</value>
+  </data>
+    <data name="Datepicker_Title" xml:space="preserve">
+    <value>Pick a date</value>
+  </data>
+    <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+    <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+    <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+    <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+    <data name="Loading_PleaseWait1" xml:space="preserve">
+    <value>Just a moment please..</value>
+  </data>
+    <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ModelValidation_Email_InvalidEmail" xml:space="preserve">
+    <value>Email is incorrect</value>
+  </data>
+  <data name="ModelValidation_Email_ValidEmail" xml:space="preserve">
+    <value>Email is valid</value>
+  </data>
+</root>

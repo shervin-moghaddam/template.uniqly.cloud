@@ -1,8 +1,9 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using robotmanden.uniqly.cloud.Models;
+using robotmanden.Models;
 
-namespace robotmanden.uniqly.cloud.Controllers;
+namespace robotmanden.Controllers;
 
 public class HomeController : Controller
 {
@@ -13,12 +14,8 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    //[Authorize]
     public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
     {
         return View();
     }

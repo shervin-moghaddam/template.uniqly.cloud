@@ -1,0 +1,321 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@using robotmanden.Models
+@using robotmanden.Resources
+@inject IHtmlLocalizer<HomeResource> localizer
+@inject ProjectSetupClass projectSetup
+@{
+    bool ShowLogo = false;
+}
+<div class="sidebar">
+<div class="brand-sec">
+   @if (ShowLogo)
+   {
+       <div class="large-logo">
+           <img src="./images/uniqlyIconLarge.png" alt="uniqly"/>
+       </div>
+   }
+   else
+   {
+       <p class="company-name">@projectSetup.WebsiteTitle</p>
+   }
+       <div class="small-logo">
+        <img src="./images/uniqlyIconSmall.png" alt="uniqly"/>
+    </div>
+    <div class="bars-icon">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+</div>
+<nav class="side-nav">
+<ul class="side-nav-items">
+<!-- 1 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-grid-2"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Dashboard</div>
+            <div class="badge-icon">
+                <div class="nav-badge">new</div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<!-- 2 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-browser"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Layout</div>
+            <div class="badge-icon">
+                <div class="nav-badge bg-secondary2">2</div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item  active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<!-- 3 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-grid-2-plus"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Apps</div>
+            <div class="badge-icon">
+                <div class="nav-badge bg-secondary">2</div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <!-- 4 Active submanu -->
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-envelope"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Message</div>
+            <div class="badge-icon">
+                <div class="nav-badge bg-secondary2">2</div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+
+<!-- 5 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-grid-2-plus"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Order Lis</div>
+            <div class="badge-icon">
+                <div class="nav-badge bg-secondary2">2</div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<li class="side-nav-text">COMPONENTS</li>
+<li class="side-nav-text-short">COMPON...</li>
+<!-- 6 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-pen-nib"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Base UI</div>
+            <div class="badge-icon">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<!-- 7 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-cube"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Advance UI</div>
+            <div class="badge-icon">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<!-- 8 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-mountain-sun"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Widgets</div>
+            <div class="badge-icon">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<!-- 9 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-calendar-lines-pen"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Forms</div>
+            <div class="badge-icon">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<!-- 10 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-table"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Tables</div>
+            <div class="badge-icon">
+                <div class="nav-badge bg-warning">233</div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<!-- 11 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-light fa-chart-pie-simple"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Charts</div>
+            <div class="badge-icon">
+                <div class="nav-badge bg-info">2</div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+<!-- 12 -->
+<li class="side-nav-item">
+    <a class="nav-link side-nav-link" href="#">
+        <i class="fa-regular fa-location-dot"></i>
+        <div class="extra-nav-con">
+            <div class="nav-text">Maps</div>
+            <div class="badge-icon">
+                <div class="nav-badge bg-dark">2</div>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </a>
+    <ul class="sidenav-subnemu">
+        <li class="nav-item active">
+            <a href="#">Layout 02</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 03</a>
+        </li>
+        <li class="nav-item">
+            <a href="#">Layout 04</a>
+        </li>
+    </ul>
+</li>
+</ul>
+</nav>
+</div>

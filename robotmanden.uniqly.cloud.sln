@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "robotmanden.uniqly.cloud", "robotmanden.uniqly.cloud.csproj", "{B0AD2BA2-DF87-4EAB-B043-011AC5AEF724}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "robotmanden.uniqly.cloud", "robotmanden.csproj", "{B0AD2BA2-DF87-4EAB-B043-011AC5AEF724}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
