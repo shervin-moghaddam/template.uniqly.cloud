@@ -12,16 +12,16 @@ using robotmanden.Services;
 using robotmanden.SQL;
 using WebMarkupMin.AspNet.Common.UrlMatchers;
 using WebMarkupMin.Core;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Allows the static class of SQLConnectionClass to connect via configuration.
 // Not a good practice, but the only one seeming available
 SQLConnectionClass.StaticConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-var m = builder.Configuration.GetSection("ProjectSetup").Get<ProjectSetupClass>();
-
 
 // Project setup
-builder.Services.AddSingleton<ProjectSetupClass>(_ => m);
+builder.Services.AddSingleton<ProjectSetupClass>(_ =>
+    builder.Configuration.GetSection("ProjectSetup").Get<ProjectSetupClass>());
 
 #region Services
 
@@ -60,8 +60,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     var cultures = new[]
     {
-        new CultureInfo("da-DK")
-        ,new CultureInfo("en-US")
+        new CultureInfo("da-DK"), new CultureInfo("en-US")
     };
 
     options.DefaultRequestCulture = new RequestCulture("da-DK");
@@ -184,46 +183,5 @@ app.UseEndpoints(endpoints =>
 });
 
 #endregion
+
 app.Run();
-
-
-
-//
-// // Add services to the container.
-// var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
-//                        throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-//
-// var app = builder.Build();
-//
-//
-// if (app.Environment.IsDevelopment())
-// {
-//     app.UseDeveloperExceptionPage();
-// }
-// else
-// {
-//     app.UseWebMarkupMin(); //  HTML Minification
-//
-//     app.UseExceptionHandler("/Home/Error");
-//     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-//     app.UseHsts();
-// }
-//
-//
-// app.UseHttpsRedirection();
-// app.UseStaticFiles();
-//
-// app.UseRouting();
-//
-// // Antiforgery
-// var antiforgery = app.Services.GetRequiredService<IAntiforgery>();
-//
-//
-// app.UseAuthorization();
-//
-// app.MapControllerRoute(
-//     name: "default",
-//     pattern: "{controller=Home}/{action=Index}/{id?}");
-// app.MapRazorPages();
-//
-// app.Run();

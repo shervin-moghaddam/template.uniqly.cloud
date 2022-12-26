@@ -21,6 +21,17 @@
         <PackageReference Include="WebMarkupMin.AspNetCore7" Version="2.13.5" />
     </ItemGroup>
 
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\UserAccessResource.da-DK.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserAccessResource.da-DK.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\UserAccessResource.en-US.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserAccessResource.da-DK.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
 
     <Target Name="PreCompileTarget" BeforeTargets="Build">
         <Exec Command="gulp compileSass" />

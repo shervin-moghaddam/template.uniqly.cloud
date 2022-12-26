@@ -5,12 +5,16 @@
 @using robotmanden.Resources;
 @inject IHtmlLocalizer<LoginResource> localizer
 @inject ProjectSetupClass projectSetup
+
 @functions{
+
     private string GetAntiXsrfRequestToken()
     {
         return Xsrf.GetAndStoreTokens(Context).RequestToken;
     }
+
 }
+
 @{
     Layout = null;
 }
@@ -54,42 +58,45 @@
 <input type="hidden" id="RequestVerificationToken" name="RequestVerificationToken" value="@GetAntiXsrfRequestToken()">
 
 <body class="uniqly">
-    <div class="login-container login-2">
-        <div class="login-content">
-            <div class="logo">
-                <img src="../images/uniqlyicon_blue.svg"></img>
-            </div>
-            <div class="sub-title">@projectSetup.WebsiteTitle</div>
-
-            <div class="input-field">
-                <p class="heading">@localizer["UserName"]</p>
-                <div class="input-wrapper">
-                    <input placeholder="@localizer["UserName_EnterUserName"]" />
-                </div>
-            </div>
-
-            <div class="input-field">
-                <p class="heading">@localizer["Password"]</p>
-                <div class="input-wrapper">
-                    <input placeholder="@localizer["Password_EnterPassword"]" type="password" />
-                    <i class="icon far fa-eye" id="toggleShowPassword" onclick="toggleShowPassword(this)"></i>
-
-                </div>
-                <p class="error-text">Password is incorrect</p>
-            </div>
-
-            <div class="checkbox remember-me">
-                <input id="login-remember" type="checkbox">
-                <label for="login-remember">@localizer["RememberMe"]</label>
-            </div>
-
-            <div class="submit-button">
-                <a>@localizer["Login"]</a>
-            </div>
-
+<div class="login-container login-2">
+    <div class="login-content">
+        <div class="logo">
+            <img src="../images/uniqlyicon_blue.svg"></img>
         </div>
+        <div class="sub-title">@projectSetup.WebsiteTitle</div>
+
+        <div class="input-field">
+            <p class="heading">@localizer["UserName"]</p>
+            <div class="input-wrapper">
+                <input placeholder="@localizer["UserName_EnterUserName"]"/>
+            </div>
+        </div>
+
+        <div class="input-field">
+            <p class="heading">@localizer["Password"]</p>
+            <div class="input-wrapper">
+                <input placeholder="@localizer["Password_EnterPassword"]" type="password"/>
+                <i class="icon far fa-eye" id="toggleShowPassword" onclick="toggleShowPassword(this)"></i>
+
+            </div>
+            <p class="error-text">Password is incorrect</p>
+        </div>
+
+        <div class="checkbox remember-me">
+            <input id="login-remember" type="checkbox">
+            <label for="login-remember">@localizer["RememberMe"]</label>
+        </div>
+
+        <div class="submit-button">
+            <a>@localizer["Login"]</a>
+        </div>
+
     </div>
-    <script src="js/login.js"></script>
+</div>
+<div class="version-text">
+    <a>Ver. @projectSetup.Version</a>
+</div>
+<script src="js/login.js"></script>
 </body>
 
 @section Scripts {

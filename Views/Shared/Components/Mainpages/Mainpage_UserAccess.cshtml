@@ -1,0 +1,293 @@
+@model robotmanden.Models.UserAccessRightsModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@using robotmanden.Models
+@using robotmanden.Resources
+@inject IHtmlLocalizer<UserAccessResource> localizer
+@inject ProjectSetupClass projectSetup
+<link rel="stylesheet" href="~/css/uniqly-forms.css"/>
+<div class="p-5">
+<p strong class="input-label">@localizer["UserAccess_Title"]</p><br/>
+<div class="custom-input-field">
+
+    <p class="input-label">@localizer["UserAccess_Subtitle"]</p>
+</div>
+
+// Todo: Dropdown + Class for titles
+
+<p strong class="input-label">@localizer["Title_Assignments"]</p><br/>
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id="AssignmentsAdd"
+        type="checkbox"
+        checked="@(Model.AssignmentsAdd)"/>
+    <label class="check-label" for="AssignmentsAdd">@localizer["Assignments_Add"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id="AssignmentsEdit"
+        type="checkbox"
+        checked="@(Model.AssignmentsEdit)"/>
+    <label class="check-label" for="AssignmentsEdit">@localizer["Assignments_Edit"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.AssignmentsDelete)"/>
+    <label class="check-label" for="">@localizer["Assignments_Delete"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.AssignmentsOpenRow)"/>
+    <label class="check-label" for="">@localizer["Assignments_PopupEditWindow"]</label>
+</div>
+
+<p strong class="input-label">@localizer["Title_Customers"]</p><br/>
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.CustomersAdd)"/>
+    <label class="check-label" for="">@localizer["Customers_Add"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.CustomersEdit)"/>
+    <label class="check-label" for="">@localizer["Customers_Edit"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.CustomersDelete)"/>
+    <label class="check-label" for="">@localizer["Customers_Delete"]</label>
+</div>
+
+<p strong class="input-label">@localizer["Title_FileGallery"]</p><br/>
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.GalleryAccess)"/>
+    <label class="check-label" for="">@localizer["FileGallery_Access"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.GalleryAdd)"/>
+    <label class="check-label" for="">@localizer["FileGallery_Add"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.GalleryDelete)"/>
+    <label class="check-label" for="">@localizer["FileGallery_Delete"]</label>
+</div>
+
+<p strong class="input-label">@localizer["Title_Robots"]</p><br/>
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.RobotAdd)"/>
+    <label class="check-label" for="">@localizer["Robots_Add"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.RobotEdit)"/>
+    <label class="check-label" for="">@localizer["Robots_Edit"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.RobotDelete)"/>
+    <label class="check-label" for="">@localizer["Robots_Delete"]</label>
+</div>
+
+<p strong class="input-label">@localizer["Title_WinterStorage"]</p><br/>
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.RouteEdit)"/>
+    <label class="check-label" for="">@localizer["WinterStorage_EditRoutes"]</label>
+</div>
+
+<p strong class="input-label">@localizer["Title_Comments"]</p><br/>
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.ViewCustomerComments)"/>
+    <label class="check-label" for="">@localizer["Comment_ViewCustomerComment"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.EditCustomerComments)"/>
+    <label class="check-label" for="">@localizer["Comment_EditCustomerComment"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.ViewInternalComments)"/>
+    <label class="check-label" for="">@localizer["Comment_ViewInternal"]</label>
+</div>
+
+<p strong class="input-label">@localizer["Title_Users"]</p><br/>
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.UsersAdd)"/>
+    <label class="check-label" for="">@localizer["Users"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.UsersEdit)"/>
+    <label class="check-label" for="">@localizer["Assignments_Add"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.UsersDelete)"/>
+    <label class="check-label" for="">@localizer["Assignments_Add"]</label>
+</div>
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.UsersEditPassword)"/>
+    <label class="check-label" for="">@localizer["Assignments_Add"]</label>
+</div>
+
+<p strong class="input-label">@localizer["Title_Sidebar"]</p><br/>
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.SidebarAccess_WinterStorage)"/>
+    <label class="check-label" for="">@localizer["SidebarAccess_WinterStorage"]</label>
+</div>
+
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.SidebarAccess_FileGallery)"/>
+    <label class="check-label" for="">@localizer["SidebarAccess_FileGallery"]</label>
+</div>
+
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.SidebarAccess_Customers)"/>
+    <label class="check-label" for="">@localizer["SidebarAccess_Customers"]</label>
+</div>
+
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.SidebarAccess_Stores)"/>
+    <label class="check-label" for="">@localizer["SidebarAccess_Stores"]</label>
+</div>
+
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.SidebarAccess_Manufacturers)"/>
+    <label class="check-label" for="">@localizer["SidebarAccess_Manufacturers"]</label>
+</div>
+
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.SidebarAccess_EmailSetup)"/>
+    <label class="check-label" for="">@localizer["SidebarAccess_EmailSetup"]</label>
+</div>
+
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.SidebarAccess_Users)"/>
+    <label class="check-label" for="">@localizer["SidebarAccess_UserSetup"]</label>
+</div>
+
+
+<div class="form-check">
+    <input
+        class="check-input success outline"
+        id=""
+        type="checkbox"
+        checked="@(Model.SidebarAccess_UserAccess)"/>
+    <label class="check-label" for="">@localizer["SidebarAccess_UserAccess"]</label>
+</div>
+
+</div>

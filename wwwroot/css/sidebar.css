@@ -187,11 +187,13 @@ button:focus {
   margin-top: 7px;
   margin-bottom: 7px;
   position: relative;
+  font-size: 14px;
 }
 .uniqly .form-check .check-input {
   margin: 20px 0;
   position: absolute;
   opacity: 0;
+  font-size: 14px;
 }
 .uniqly .form-check .check-input + .check-label {
   color: var(--gray-100);
@@ -699,7 +701,7 @@ button:focus {
 .uniqly .custom-input-field {
   margin-bottom: 30px;
 }
-.uniqly .custom-input-field .input-lavel {
+.uniqly .custom-input-field .input-label {
   margin-bottom: 6px;
   font-size: 14px;
   color: var(--gray-100);
@@ -1352,6 +1354,13 @@ body {
   overflow: hidden;
   display: flex;
 }
+.uniqly .main-wrapper .login-text {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 0;
+  margin-right: 0;
+  padding: 10px;
+}
 .uniqly .main-wrapper .sidebar {
   width: 270px;
   background: var(--white-color);
@@ -1704,6 +1713,9 @@ body {
 }
 .uniqly .main-wrapper .main-body .top-appbar .top-app-right .top-appbar-badge {
   padding-right: 26px;
+}
+.uniqly .main-wrapper .main-body .top-appbar .top-app-right .top-appbar-badge .user-text {
+  font-size: 12px;
 }
 .uniqly .main-wrapper .main-body .top-appbar .top-app-right .top-appbar-badge:last-child {
   padding-right: 30px;

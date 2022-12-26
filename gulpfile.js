@@ -11,7 +11,7 @@ var paths = {
 };
 
 // Files to watch
-const scssFiles = ("login.scss,sidebar.scss").split(",");
+const scssFiles = ("login.scss,sidebar.scss,uniqly-forms.scss").split(",");
 
 // Compile SCSS to CSS
 function compileSass(done) {

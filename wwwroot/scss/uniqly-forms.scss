@@ -19,11 +19,13 @@
     margin-top: 7px;
     margin-bottom: 7px;
     position: relative;
+    font-size: 14px;
 
     .check-input {
       margin: 20px 0;
       position: absolute;
       opacity: 0;
+      font-size: 14px;
 
       & + .check-label {
         color: var(--gray-100);
@@ -671,7 +673,7 @@
   .custom-input-field {
     margin-bottom: 30px;
 
-    .input-lavel {
+    .input-label {
       margin-bottom: 6px;
       font-size: 14px;
       color: var(--gray-100);

@@ -8,6 +8,14 @@
     overflow: hidden;
     display: flex;
 
+    & .login-text {
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 0;
+      margin-right: 0;
+      padding:10px;
+    }
+    
     .sidebar {
       width: 270px;
       background: var(--white-color);
@@ -425,6 +433,9 @@
 
           .top-appbar-badge {
             padding-right: 26px;
+            .user-text{
+              font-size:12px;
+            }
 
             &:last-child {
               padding-right: 30px;

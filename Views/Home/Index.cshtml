@@ -1,15 +1,14 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <div class="main-wrapper">
-    
+<div class="main-wrapper">
+
     @await Component.InvokeAsync("HomeSidebar")
-     <div class="main-body">
-      @await Component.InvokeAsync("HomeTopbar")
-        <!--*********************************
-        content  body
-        **********************************-->
-        <div class="content-body"></div>
+    <div class="main-body">
+        @await Component.InvokeAsync("HomeTopbar")
+        <div class="content-body">
+            @await Component.InvokeAsync("Mainpage_UserAccess")
+        </div>
     </div>
     <script src="js/sidebar.js"></script>
 
