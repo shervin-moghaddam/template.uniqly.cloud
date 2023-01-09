@@ -1,6 +1,6 @@
 using SendGrid.Helpers.Mail;
 
-namespace robotmanden.Code.Helpers;
+namespace template.Code.Helpers;
 
 public class MailSendModel
 {

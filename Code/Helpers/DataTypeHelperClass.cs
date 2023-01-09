@@ -10,7 +10,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Formatters;
 
-namespace robotmanden.Code
+namespace template.Code
 {
     public class DataTypeConversionHelperClass
     {

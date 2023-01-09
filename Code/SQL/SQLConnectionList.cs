@@ -1,7 +1,7 @@
 ﻿// using System.Data;
-// using static robotmanden.Code.DataTypeConversionHelperClass;
+// using static template.Code.DataTypeConversionHelperClass;
 //
-// namespace robotmanden.SQL
+// namespace template.SQL
 // {
 //     /// <summary>
 //     /// The Connection string array contains the following:
@@ -16,9 +16,9 @@
 //     {
 //
 //         public static string[] MasterDBConn = new string[6]{
-//           "mdb.robotmanden.dk",
+//           "mdb.template.dk",
 //           "1434",
-//           "robotmanden",
+//           "template",
 //           "MasterDB",
 //           "sa",
 //           "Moghaddam169#"};

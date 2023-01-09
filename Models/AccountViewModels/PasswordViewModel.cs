@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace robotmanden.Models.AccountViewModels
+namespace template.Models.AccountViewModels
 {
     public class ResetPasswordViewModel
     {

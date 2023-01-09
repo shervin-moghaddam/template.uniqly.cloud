@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace robotmanden.Controllers;
+namespace template.Controllers;
 
 public class CultureController : Controller
 {

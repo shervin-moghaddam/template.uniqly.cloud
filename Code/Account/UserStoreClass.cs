@@ -1,18 +1,18 @@
-﻿using robotmanden.SQL;
-using robotmanden.Models;
+﻿using template.SQL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 using System.Threading;
 using System.Threading.Tasks;
 
-using static robotmanden.SQL.SQLHelperClass;
-using static robotmanden.Code.DataTypeConversionHelperClass;
+using static template.SQL.SQLHelperClass;
+using static template.Code.DataTypeConversionHelperClass;
 using System.Data;
 using System.Security.Principal;
-using robotmanden.Services;
+using template.Models;
+using template.Services;
 
-namespace robotmanden.Code
+namespace template.Code
 {
     public class UserStoreClass : IUserStore<AccountUserModel>, IUserPasswordStore<AccountUserModel>
     {

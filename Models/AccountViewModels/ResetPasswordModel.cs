@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace robotmanden.Models
+namespace template.Models
 {
     public class ResetPasswordModel
     {

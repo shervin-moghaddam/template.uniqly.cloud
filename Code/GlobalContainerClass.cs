@@ -1,10 +1,10 @@
-﻿using robotmanden.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static robotmanden.Code.DataTypeConversionHelperClass;
-namespace robotmanden.Code
+using template.Services;
+using static template.Code.DataTypeConversionHelperClass;
+namespace template.Code
 {
     public class GlobalContainerClass
     {

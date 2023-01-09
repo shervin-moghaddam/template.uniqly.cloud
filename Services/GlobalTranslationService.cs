@@ -1,7 +1,7 @@
-using robotmanden.Resources;
 using Microsoft.Extensions.Localization;
+using template.Resources;
 
-namespace robotmanden.Services
+namespace template.Services
 {
     /// <summary>
     /// Message localizer as a service will be primarily used to translate Data Annotation and Model Validation messages.

@@ -1,4 +1,4 @@
-namespace robotmanden.Resources;
+namespace template.Resources;
 
 public class HomeResource
 {

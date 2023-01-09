@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace robotmanden.Code
+namespace template.Code
 {
     public class RandomizeHelperClass
     {

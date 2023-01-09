@@ -1,11 +1,11 @@
-﻿using robotmanden.Resources;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using System.ComponentModel.DataAnnotations;
+using template.Resources;
 
-namespace robotmanden.Models
+namespace template.Models
 {
     [AllowAnonymous]
     public class ForgotPasswordModel

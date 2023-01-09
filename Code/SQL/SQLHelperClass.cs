@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
-using robotmanden.Code;
-using static robotmanden.SQL.SQLConnectionClass;
+using template.Code;
+using static template.SQL.SQLConnectionClass;
 
-namespace robotmanden.SQL
+namespace template.SQL
 {
     public class SQLHelperClass
     {

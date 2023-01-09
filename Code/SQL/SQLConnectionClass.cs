@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace robotmanden.SQL
+namespace template.SQL
 {
     public class SQLConnectionClass
     {

@@ -1,12 +1,11 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using robotmanden.Services;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using template.Services;
+using static template.Code.DataTypeConversionHelperClass;
 
-using static robotmanden.Code.DataTypeConversionHelperClass;
-
-namespace robotmanden.Code
+namespace template.Code
 {
     public class DataAnnotationHelperClass
     {

@@ -1,8 +1,8 @@
-﻿using robotmanden.Resources;
-using Microsoft.Extensions.Localization;
+﻿using Microsoft.Extensions.Localization;
 using System.Reflection;
+using template.Resources;
 
-namespace robotmanden.Services
+namespace template.Services
 {
     public class GlobalLocalizationService
     {

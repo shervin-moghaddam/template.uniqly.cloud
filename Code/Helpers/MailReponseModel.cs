@@ -1,7 +1,7 @@
 using System.Net;
 using SendGrid;
 
-namespace robotmanden.Code.Helpers;
+namespace template.Code.Helpers;
 
 public class MailResponseModel
 {

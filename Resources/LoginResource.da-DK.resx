@@ -139,13 +139,13 @@
     <value>Glemt kodeordet?</value>
   </data>
   <data name="Link_robotmandenWebsite" xml:space="preserve">
-    <value>Er du ikke en robotmanden bruger endnu?</value>
+    <value>Er du ikke en template bruger endnu?</value>
   </data>
   <data name="Login_UserDoesntExist" xml:space="preserve">
     <value>Email adressen blev ikke fundet.</value>
   </data>
   <data name="ChangePassword_InfoText" xml:space="preserve">
-    <value>Hej {0}.&lt;/a&gt;&lt;br&gt;&lt;a&gt;Indtast det kodeord du vil benytte fremadrettet for at logge ind på robotmanden website.&lt;br&gt;For en sikkerheds skyld skal det skal indeholde minimum 8 tegn, indeholde store og små bogstaver og mindst 1 speciel tegn.</value>
+    <value>Hej {0}.&lt;/a&gt;&lt;br&gt;&lt;a&gt;Indtast det kodeord du vil benytte fremadrettet for at logge ind på template website.&lt;br&gt;For en sikkerheds skyld skal det skal indeholde minimum 8 tegn, indeholde store og små bogstaver og mindst 1 speciel tegn.</value>
   </data>
   <data name="ChangePassword" xml:space="preserve">
     <value>Skift kode</value>
@@ -157,10 +157,10 @@
     <value>Din nye adgangskode er gemt.</value>
   </data>
   <data name="ResetPasswordMail_Subject" xml:space="preserve">
-    <value>Nulstilling af din adgangskode til robotmanden</value>
+    <value>Nulstilling af din adgangskode til template</value>
   </data>
   <data name="ResetPasswordMail_Message" xml:space="preserve">
-    <value>Hej,&lt;br&gt;Her er koden til nulstilling af dit kodeord.&lt;br&gt;Indtast koden på https://admin.robotmanden.dk&lt;br&gt;Koden udløber 15 efter minutter.&lt;br&gt;&lt;br&gt;Kode: {1}&lt;br&gt;</value>
+    <value>Hej,&lt;br&gt;Her er koden til nulstilling af dit kodeord.&lt;br&gt;Indtast koden på https://admin.template.dk&lt;br&gt;Koden udløber 15 efter minutter.&lt;br&gt;&lt;br&gt;Kode: {1}&lt;br&gt;</value>
   </data>
   <data name="ResetPasswordCode_InfoText" xml:space="preserve">
     <value>Vi har sendt en kode til dig på mail. Indtast koden herunder, for at nulstille.</value>

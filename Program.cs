@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Options;
-using robotmanden.Code;
-using robotmanden.Models;
-using robotmanden.Resources;
-using robotmanden.Services;
-using robotmanden.SQL;
+using template.Code;
+using template.Models;
+using template.Resources;
+using template.Services;
+using template.SQL;
 using WebMarkupMin.AspNet.Common.UrlMatchers;
 using WebMarkupMin.Core;
 

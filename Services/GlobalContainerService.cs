@@ -1,13 +1,13 @@
-﻿using robotmanden.Code;
-using robotmanden.Models;
+﻿using template.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using template.Code;
 
-namespace robotmanden.Services
+namespace template.Services
 {
     public class GlobalContainerService : IGlobaContainerService
     {

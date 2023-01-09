@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using robotmanden.Models;
+using template.Models;
 
-namespace robotmanden.Controllers;
+namespace template.Controllers;
 
 public class HomeController : Controller
 {

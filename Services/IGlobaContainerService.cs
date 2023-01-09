@@ -1,10 +1,10 @@
-﻿using robotmanden.Code;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using template.Code;
 
-namespace robotmanden.Services
+namespace template.Services
 {
     interface IGlobaContainerService
     {

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
-namespace robotmanden.Code
+namespace template.Code
 {
     public static class JSonHelperClass
     {

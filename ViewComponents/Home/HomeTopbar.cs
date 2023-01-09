@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
-using robotmanden.Models;
-using robotmanden.Resources;
+using template.Models;
+using template.Resources;
 
-namespace robotmanden.ViewComponents;
+namespace template.ViewComponents;
 public class HomeTopbar: ViewComponent
 {
     public HomeTopbar(

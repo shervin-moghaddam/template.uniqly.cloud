@@ -1,7 +1,7 @@
-global using static robotmanden.Code.DataTypeConversionHelperClass;
-global using static robotmanden.SQL.SQLHelperClass;
-global using static robotmanden.Code.SiteLogHelperClass;
-namespace robotmanden;
+global using static template.Code.DataTypeConversionHelperClass;
+global using static template.SQL.SQLHelperClass;
+global using static template.Code.SiteLogHelperClass;
+namespace template;
 
 public class GlobalUsings
 {

@@ -1,8 +1,8 @@
 ﻿@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
-@model robotmanden.Models.LoginViewModel
+@model template.Models.LoginViewModel
 @using Microsoft.AspNetCore.Mvc.Localization
-@using robotmanden.Models
-@using robotmanden.Resources;
+@using template.Models
+@using template.Resources;
 @inject IHtmlLocalizer<LoginResource> localizer
 @inject ProjectSetupClass projectSetup
 
@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
     <globalization uiCulture="auto" culture="auto"></globalization>
     <meta charset="utf-8"/>
-    <title>robotmanden Admin</title>
+    <title>template Admin</title>
     @* Icon *@
     <link rel="apple-touch-icon" sizes="57x57" href="~/favicon~/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="~/favicon/apple-icon-60x60.png">

@@ -1,5 +1,5 @@
 ﻿using System;
-using static robotmanden.Code.DataTypeConversionHelperClass;
+using static template.Code.DataTypeConversionHelperClass;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using Microsoft.AspNetCore.Html;
 
-namespace robotmanden.Code
+namespace template.Code
 {
     public class DataFormattingHelperClass
     {

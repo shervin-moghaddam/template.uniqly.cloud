@@ -139,13 +139,13 @@
     <value>Forgot your password?</value>
   </data>
   <data name="Link_robotmandenWebsite" xml:space="preserve">
-    <value>Not an robotmanden user yet?</value>
+    <value>Not an template user yet?</value>
   </data>
   <data name="Login_UserDoesntExist" xml:space="preserve">
     <value>The email entered was not found.</value>
   </data>
   <data name="ChangePassword_InfoText" xml:space="preserve">
-    <value>Hi, {0}.&lt;br&gt;Please type a password you want to use to login to the robotmanden website.&lt;br&gt;For your security, it must have at least 8 characters with at least one number and one special character.</value>
+    <value>Hi, {0}.&lt;br&gt;Please type a password you want to use to login to the template website.&lt;br&gt;For your security, it must have at least 8 characters with at least one number and one special character.</value>
   </data>
   <data name="ChangePassword" xml:space="preserve">
     <value>Change password</value>
@@ -157,10 +157,10 @@
     <value>Your new password has been saved.</value>
   </data>
   <data name="ResetPasswordMail_Subject" xml:space="preserve">
-    <value>Password reset for robotmanden</value>
+    <value>Password reset for template</value>
   </data>
   <data name="ResetPasswordMail_Message" xml:space="preserve">
-    <value>Hi,&lt;br&gt;Below is the code you need to reset your password.&lt;br&gt;Please type the code as shown on https://admin.robotmanden.dk&lt;br&gt;The code will expire after 15 minutes.&lt;br&gt;&lt;br&gt;Code: {1}</value>
+    <value>Hi,&lt;br&gt;Below is the code you need to reset your password.&lt;br&gt;Please type the code as shown on https://admin.template.dk&lt;br&gt;The code will expire after 15 minutes.&lt;br&gt;&lt;br&gt;Code: {1}</value>
   </data>
   <data name="ResetPasswordCode_InfoText" xml:space="preserve">
     <value>We've sent you a code by email. Pleaste type the code below, to finish resetting your password.</value>

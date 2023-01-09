@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using robotmanden.Models;
+using template.Models;
 
-namespace robotmanden.Services
+namespace template.Services
 {
     interface IGlobalValues
     {

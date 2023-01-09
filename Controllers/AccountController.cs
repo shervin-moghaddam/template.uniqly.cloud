@@ -1,7 +1,4 @@
-﻿using robotmanden.Code;
-using robotmanden.Models;
-using robotmanden.Resources;
-using robotmanden.Services;
+﻿using template.Code;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -20,14 +17,16 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.UI.V5.Pages.Account.Manage.Internal;
-using robotmanden.Resources;
-using static robotmanden.Code.DataTypeConversionHelperClass;
-using static robotmanden.SQL.SQLConnectionClass;
+using template.Models;
+using template.Resources;
+using template.Services;
+using static template.Code.DataTypeConversionHelperClass;
+using static template.SQL.SQLConnectionClass;
 
-using static robotmanden.SQL.SQLHelperClass;
+using static template.SQL.SQLHelperClass;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
-namespace robotmanden.Controllers
+namespace template.Controllers
 {
     public class AccountController : Controller
     {
@@ -179,11 +178,11 @@ namespace robotmanden.Controllers
                 string Message = Localizer["ResetPasswordMail_Message", model.UserFirstname, ValidationCode];
 
                 // Create mail body and insert message
-                string mailBody = "<html><head><style>img {width: 200px;}body {padding: 20px;font-family: Calibri;}h1 {font-size: 18px; padding: 0px;}</style><meta charset='utf-8'></head><body><p>{MESSAGE}</p><h1><strong>robotmanden Support Team</strong><br></h1><img src='https://www.dropbox.com/s/fqhhpihvq4rliwz/Logo_500x195.jpg?raw=1'></body></html>";
+                string mailBody = "<html><head><style>img {width: 200px;}body {padding: 20px;font-family: Calibri;}h1 {font-size: 18px; padding: 0px;}</style><meta charset='utf-8'></head><body><p>{MESSAGE}</p><h1><strong>template Support Team</strong><br></h1><img src='https://www.dropbox.com/s/fqhhpihvq4rliwz/Logo_500x195.jpg?raw=1'></body></html>";
                 mailBody = mailBody.Replace("{MESSAGE}", Message);
                 MimeMessage messageToSend = new MimeMessage
                 {
-                    Sender = new MailboxAddress("robotmanden support", "noreply@robotmanden.dk"),
+                    Sender = new MailboxAddress("template support", "noreply@template.dk"),
                     Subject = Localizer["ResetPasswordMail_Subject"]
                 };
 
@@ -193,7 +192,7 @@ namespace robotmanden.Controllers
                 var client = new SmtpClient();
                 client.ServerCertificateValidationCallback = (s, c, h, e) => true;
                 client.Connect("smtp.WebSiteLive.net", 465, SecureSocketOptions.Auto);
-                client.Authenticate("noreply@robotmanden.dk", "Moghaddam169#");
+                client.Authenticate("noreply@template.dk", "Moghaddam169#");
                 try
                 {
                     client.Send(messageToSend);

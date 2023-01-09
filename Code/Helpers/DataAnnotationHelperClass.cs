@@ -1,10 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using robotmanden.Services;
-using static robotmanden.Code.DataTypeConversionHelperClass;
+using template.Services;
+using static template.Code.DataTypeConversionHelperClass;
 
-namespace robotmanden.Code.Helpers;
+namespace template.Code.Helpers;
 
 public class DataAnnotationHelperClass
 {

@@ -1,15 +1,15 @@
-﻿using robotmanden.Models;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using template.Models;
 
 /// <summary>
 /// CAPNORDIC WEB DOES NOT USE ROLES AS WE FOLLOW A06 TABLES
 /// </summary>
-namespace robotmanden.Code
+namespace template.Code
 {
 
     public class RoleStoreClass : IRoleStore<AccountRoleModel>

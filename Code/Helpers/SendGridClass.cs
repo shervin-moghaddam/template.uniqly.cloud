@@ -2,9 +2,9 @@ using System.Diagnostics;
 using Newtonsoft.Json;
 using SendGrid;
 using SendGrid.Helpers.Mail;
-using robotmanden.Models;
+using template.Models;
 
-namespace robotmanden.Code.Helpers;
+namespace template.Code.Helpers;
 
 public class SendGridClass
 {

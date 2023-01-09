@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using static robotmanden.SQL.SQLHelperClass;
-using static robotmanden.Code.DataTypeConversionHelperClass;
+using static template.SQL.SQLHelperClass;
+using static template.Code.DataTypeConversionHelperClass;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using robotmanden.Models;
 using System.Data;
+using template.Models;
 
-namespace robotmanden.Code
+namespace template.Code
 {
     public class AccountHelperClass
     {

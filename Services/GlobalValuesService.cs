@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using robotmanden.Models;
-using robotmanden.SQL;
-using static robotmanden.Code.DataTypeConversionHelperClass;
-namespace robotmanden.Services
+using template.Models;
+using template.SQL;
+using static template.Code.DataTypeConversionHelperClass;
+namespace template.Services
 {
     public class GlobalValuesService : IGlobalValues
     {

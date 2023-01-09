@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace robotmanden.Code;
+namespace template.Code;
 
 public class SiteLogHelperClass
 {
