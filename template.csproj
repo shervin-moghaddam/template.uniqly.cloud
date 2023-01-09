@@ -22,14 +22,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="Resources\UserAccessResource.da-DK.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>UserAccessResource.da-DK.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Resources\UserAccessResource.en-US.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>UserAccessResource.da-DK.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
+      <Folder Include="ViewComponents\Mainpage" />
+      <Folder Include="Views\Shared\Components\Mainpages" />
     </ItemGroup>
 
 
