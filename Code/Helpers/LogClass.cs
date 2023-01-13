@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace template.Code.Helpers;
+namespace template.Code;
 
 public class LogClass
 {

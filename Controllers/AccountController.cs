@@ -20,9 +20,9 @@ using Microsoft.AspNetCore.Identity.UI.V5.Pages.Account.Manage.Internal;
 using template.Models;
 using template.Resources;
 using template.Services;
+using static template.Code.LogClass;
 using static template.Code.DataTypeConversionHelperClass;
 using static template.SQL.SQLConnectionClass;
-
 using static template.SQL.SQLHelperClass;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
@@ -43,6 +43,7 @@ namespace template.Controllers
             Localizer = localizer;
             ProjectSetup = projectSetup;
         }
+
         private readonly ProjectSetupClass ProjectSetup;
         private readonly UserManager<AccountUserModel> UserManager;
         private readonly SignInManager<AccountUserModel> SignInManager;
@@ -70,33 +71,15 @@ namespace template.Controllers
 
             return View(m);
         }
-        
-                [HttpPost]
+
+        [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                // Some users with the flag "OrderFormUser" in Roles, is only allowed to access the order form
-                int OrderFormUser = cInt(GetScalar(
-                    "SELECT Users_OrderFormUser FROM vUsers WHERE Users_UserName=@UserName",
-                    CreateParam(model.UserName, "UserName")));
-
-                if (!returnUrl.ToLower().Contains("forhandler") && OrderFormUser == 1)
-                {
-                    //returnUrl = "";
-                    //ViewData["ReturnUrl"] = returnUrl;
-
-                    // Deny access
-                    ModelState.AddModelError(string.Empty,
-                        "Denne bruger har kun adgang til forhandler bestillings form.");
-                    return View(model);
-                }
-
-                ;
-
-                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, false,
+                var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, false,
                     lockoutOnFailure: false);
 
 
@@ -117,7 +100,7 @@ namespace template.Controllers
                     }
 
                     // Stores user ID into global values
-                    globalcontainer.StoreUser(model.UserName);
+                    GlobalContainer.StoreUser(model.UserName);
                     if (returnUrl.ToLower().Contains("home/index"))
                         return RedirectToAction(nameof(HomeController.Index), "Home",
                             new { WebDarkmode = "", model.UserName });
@@ -138,18 +121,10 @@ namespace template.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult>
-            Login(LoginViewModel model, string returnUrl = null) // Login validation and submit
-        {
-            return View(model);
-        }
-
-
-        [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> ChangePasswordPartial()
         {
-            return PartialView();
+            //   return PartialView();
+            return null;
         }
 
         [HttpPost]
@@ -160,26 +135,28 @@ namespace template.Controllers
 
             if (!string.IsNullOrEmpty(UserName))
             {
-                
                 model.UserName = UserName;
             }
 
             model.InfoText = Localizer["ResetPassword_InfoText"];
-            return PartialView(model);
+            //return PartialView(model);
+            return null;
         }
 
 
         [HttpPost]
         public async Task<IActionResult> ChangePassword(ChangePasswordModel model)
         {
-            return View(model);
+            //return View(model);
+            return null;
         }
 
-       
+
         public async Task<IActionResult> ResetPasswordCodePartial(ResetPasswordCodeModel model)
         {
             model.InfoText = Localizer["ResetPasswordCode_InfoText"];
-            return PartialView(model);
+            // return PartialView(model);
+            return null;
         }
 
 
@@ -294,7 +271,8 @@ namespace template.Controllers
         [HttpGet]
         public IActionResult AccessDenied()
         {
-            return View();
+            //return View();
+            return null;
         }
 
         #endregion
