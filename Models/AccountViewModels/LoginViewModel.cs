@@ -4,12 +4,12 @@ namespace template.Models
 {
     public class LoginViewModel
     {
-        [EmailAddress(ErrorMessage = "NotValidEmail")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "LoginValidationError_NoUsername")]
+      //  [EmailAddress(ErrorMessage = "NotValidEmail")]
+       // [Required(AllowEmptyStrings = false, ErrorMessage = "LoginValidationError_NoUsername")]
         public string UserName { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "LoginValidationError_NoPassword")]
-        [DataType(DataType.Password)]
+        //[Required(AllowEmptyStrings = false, ErrorMessage = "LoginValidationError_NoPassword")]
+        //[DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Display(Name = "Remember me")]

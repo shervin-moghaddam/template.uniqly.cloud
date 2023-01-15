@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using static template.SQL.SQLHelperClass;
+using static template.SQL.SQLService;
 using static template.Code.DataTypeConversionHelperClass;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity;

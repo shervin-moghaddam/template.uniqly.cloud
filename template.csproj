@@ -4,7 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <UserSecretsId>aspnet-robotmanden-014FE88F-142A-46BE-BD11-066439F6E36C</UserSecretsId>
+        <UserSecretsId>aspnet-template-014FE88F-142A-46BE-BD11-066439F6E36C</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,6 +24,10 @@
     <ItemGroup>
       <Folder Include="ViewComponents\Mainpage" />
       <Folder Include="Views\Shared\Components\Mainpages" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
     </ItemGroup>
 
 

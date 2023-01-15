@@ -4,17 +4,45 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using static template.Code.LogService;
 using System.IO;
 using System.Threading.Tasks;
 using template.Code;
-using static template.SQL.SQLConnectionClass;
-
+using template.Models;
+using template.Services;
+using static template.Code.Helpers.SQLHelperClass;
 namespace template.SQL
 {
-    public class SQLHelperClass
+    public class SQLService
     {
+        public SQLService(
+            ProjectSetupClass projectSetup,
+            GlobalContainerService GCS)
+        {
+            GlobalContainer = GCS;
+            ProjectSetup = projectSetup;
+        }
+
+        private readonly ProjectSetupClass ProjectSetup;
+        private readonly GlobalContainerService GlobalContainer;
+        public LogService Logger; // Injected the logservice from logservice itself
+
+        private SqlConnection SQLConnect()
+        {
+            try
+            {
+                SqlConnection SQLCon = new SqlConnection(ProjectSetup.SQLConnection);
+                SQLCon.Open();
+                return SQLCon;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+            
         //GET SCALAR (no parameter)
-        public static object GetScalar(string queryString)
+        public object GetScalar(string queryString)
         {
             try
             {
@@ -28,13 +56,13 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetScalar", queryString, ex.Message, 2);
+                Logger.GeneralLog("GetScalar", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
         //GET SCALAR (With parameter)
-        public static object GetScalar(string queryString, params DbParameter[] ParamArray)
+        public object GetScalar(string queryString, params DbParameter[] ParamArray)
         {
             try
             {
@@ -53,13 +81,13 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetScalar2", queryString, ex.Message, 2);
+                Logger.GeneralLog("GetScalar2", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
         // GET DATATABLE (No Parameter)
-        public static DataTable GetDataTable(string queryString)
+        public DataTable GetDataTable(string queryString)
         {
             try
             {
@@ -81,14 +109,14 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetDataTable", queryString, ex.Message, 2);
+                Logger.GeneralLog("GetDataTable", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
                 return new DataTable();
             }
         }
 
         // GET DATATABLE (With Parameter)
-        public static DataTable GetDataTable(string queryString, params DbParameter[] ParamArray)
+        public DataTable GetDataTable(string queryString, params DbParameter[] ParamArray)
         {
             try
             {
@@ -117,14 +145,14 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetDataTable2", queryString, ex.Message, 2);
+                Logger.GeneralLog("GetDataTable2", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
                 return new DataTable();
             }
         }
 
         // Get datatable Async class
-        public static async Task<DataTable> GetDataTableAsync(string queryString, params DbParameter[] ParamArray)
+        public async Task<DataTable> GetDataTableAsync(string queryString, params DbParameter[] ParamArray)
         {
             try
             {
@@ -153,13 +181,13 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetDataTableAsync", queryString, ex.Message, 2);
+                Logger.GeneralLog("GetDataTableAsync", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
         //NONQUERY (no parameter)
-        public static void ExecQuery(string queryString)
+        public void ExecQuery(string queryString)
         {
             try
             {
@@ -171,13 +199,13 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("ExecQuery", queryString, ex.Message, 2);
+                Logger.GeneralLog("ExecQuery", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
         // NONQUERY (Parameter LIST)
-        public static void ExecQuery(string queryString, List<DbParameter> ParameterList)
+        public void ExecQuery(string queryString, List<DbParameter> ParameterList)
         {
             try
             {
@@ -194,13 +222,13 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("ExecQuery2", queryString, ex.Message, 2);
+                Logger.GeneralLog("ExecQuery2", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
         //NONQUERY (With parameter)
-        public static void ExecQuery(string queryString, params DbParameter[] ParamArray)
+        public void ExecQuery(string queryString, params DbParameter[] ParamArray)
         {
             try
             {
@@ -217,12 +245,12 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("ExecQuery2", queryString, ex.Message, 2);
+                Logger.GeneralLog("ExecQuery2", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
-        public static SqlCommand ExecStoredProcedure(string queryString)
+        public SqlCommand ExecStoredProcedure(string queryString)
         {
             try
             {
@@ -236,13 +264,13 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("ExecStoredProcedure", queryString, ex.Message, 2);
+                Logger.GeneralLog("ExecStoredProcedure", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
         //ExecStoredProcedure (With parameter)
-        public static SqlCommand ExecStoredProcedure(string queryString, params DbParameter[] ParamArray)
+        public SqlCommand ExecStoredProcedure(string queryString, params DbParameter[] ParamArray)
         {
             try
             {
@@ -261,14 +289,14 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("ExecStoredProcedure2", queryString, ex.Message, 2);
+                Logger.GeneralLog("ExecStoredProcedure2", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
 
         //ExecStoredProcedure (With datatable return)
-        public static DataTable ExecStoredProcedureReturnDT(string queryString, params DbParameter[] ParamArray)
+        public DataTable ExecStoredProcedureReturnDT(string queryString, params DbParameter[] ParamArray)
         {
             try
             {
@@ -298,12 +326,12 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("ExecStoredProcedure2", queryString, ex.Message, 2);
+                Logger.GeneralLog("ExecStoredProcedure2", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
-        public static Tuple<SqlCommand, DataTable> ExecStoredProcedureReturnDTAndExec(string queryString,
+        public Tuple<SqlCommand, DataTable> ExecStoredProcedureReturnDTAndExec(string queryString,
             params DbParameter[] ParamArray)
         {
             try
@@ -338,29 +366,11 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("ExecStoredProcedure2", queryString, ex.Message, 2);
+                Logger.GeneralLog("ExecStoredProcedure2", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
 
-        public static void GeneralLog(string Identifier, string Txt1, string Txt2, int ErrorCode)
-        {
-            try
-            {
-                Debug.WriteLine($"(General Log): {Identifier}: {Txt1} - {Txt2}");
-
-                ExecQuery(
-                    "INSERT INTO L01_GeneralLog (Identifier, Text1, Text2, Status) VALUES (@Identifier, @Text1, @Text2, @Status)",
-                    CreateParam(Identifier, "Identifier"),
-                    CreateParam(Txt1, "Text1"),
-                    CreateParam(Txt2, "Text2"),
-                    CreateParam(ErrorCode, "Status"));
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"GENERAL LOG FAILED! {Environment.NewLine}Exception: {ex.Message}");
-            }
-        }
 
 
         /// <summary>
@@ -371,40 +381,40 @@ namespace template.SQL
         /// returns: SqlCommand
         /// 2: ExecuteCommand
         /// </summary>
-        public class ExecStoredProcedureClass
-        {
-            string[] ConnVariables;
-            SqlCommand command;
-
-            public SqlCommand CreateSQLCommand(string queryString, string[] _ConnVariables)
-            {
-                try
-                {
-                    ConnVariables = _ConnVariables;
-                    command = new SqlCommand(queryString, SQLConnect());
-                    command.CommandType = CommandType.StoredProcedure;
-                    //foreach (SqlParameter p in ParamArray)
-                    //{
-                    //    command.Parameters.Add(p.SourceColumn, p.SqlDbType, p.Size);
-                    //}
-                    //command.Parameters.Add(p.SourceColumn, p.SqlDbType, p.Size);
-                    return command;
-                }
-                catch (Exception ex)
-                {
-                    GeneralLog("CreateSQLCommand", queryString, ex.Message, 2);
-                    throw new Exception(ex.Message);
-                }
-            }
-
-            public void ExecuteCommand()
-            {
-                using (SqlConnection SQLCon = SQLConnect())
-                {
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
+        // public class ExecStoredProcedureClass
+        // {
+        //     string[] ConnVariables;
+        //     SqlCommand command;
+        //
+        //     public SqlCommand CreateSQLCommand(string queryString, string[] _ConnVariables)
+        //     {
+        //         try
+        //         {
+        //             ConnVariables = _ConnVariables;
+        //             command = new SqlCommand(queryString, SQLConnect());
+        //             command.CommandType = CommandType.StoredProcedure;
+        //             //foreach (SqlParameter p in ParamArray)
+        //             //{
+        //             //    command.Parameters.Add(p.SourceColumn, p.SqlDbType, p.Size);
+        //             //}
+        //             //command.Parameters.Add(p.SourceColumn, p.SqlDbType, p.Size);
+        //             return command;
+        //         }
+        //         catch (Exception ex)
+        //         {
+        //             Logger.GeneralLog("CreateSQLCommand", queryString, ex.Message, 2);
+        //             throw new Exception(ex.Message);
+        //         }
+        //     }
+        //
+        //     public void ExecuteCommand()
+        //     {
+        //         using (SqlConnection SQLCon = SQLConnect())
+        //         {
+        //             command.ExecuteNonQuery();
+        //         }
+        //     }
+        // }
 
         /// <summary>
         /// Executes a store procedure and saves everything returned in a dataset.
@@ -412,7 +422,7 @@ namespace template.SQL
         /// <param name="ProcedureName">Name of SP</param>
         /// <param name="ConnVariables">Connection Variables</param>
         /// <returns></returns>
-        public static DataSet GetDataSetFromStoredProcedure(string ProcedureName)
+        public DataSet GetDataSetFromStoredProcedure(string ProcedureName)
         {
             try
             {
@@ -435,7 +445,7 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetDataSetFromStoredProcedure", ProcedureName, ex.Message, 2);
+                Logger.GeneralLog("GetDataSetFromStoredProcedure", ProcedureName, ex.Message, 2);
                 throw new Exception(ex.Message);
                 return null;
             }
@@ -448,7 +458,7 @@ namespace template.SQL
         /// <param name="ConnVariables">Connection Variables</param>
         /// <param name="ParamArray">Parameters</param>
         /// <returns></returns>
-        public static DataSet GetDataSetFromStoredProcedure(string ProcedureName, params DbParameter[] ParamArray)
+        public DataSet GetDataSetFromStoredProcedure(string ProcedureName, params DbParameter[] ParamArray)
         {
             try
             {
@@ -476,7 +486,7 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetDataSetFromStoredProcedure", ProcedureName, ex.Message, 2);
+                Logger.GeneralLog("GetDataSetFromStoredProcedure", ProcedureName, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
@@ -489,7 +499,7 @@ namespace template.SQL
         /// <param name="dtSource">Source Datatable</param>
         /// <param name="DestinationTableName">Destination tablename</param>
         /// <param name="Sync">If used for sync then TRUE. (Checks for SyncGUID)</param>
-        public static bool InsertDatatableToDB(string[] ConnVariables, DataTable dtSource,
+        public bool InsertDatatableToDB(string[] ConnVariables, DataTable dtSource,
             string DestinationTableName)
         {
             try
@@ -510,7 +520,7 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("BulkCopyDataTable", DestinationTableName, ex.Message, 2);
+                Logger.GeneralLog("BulkCopyDataTable", DestinationTableName, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
         }
@@ -523,7 +533,7 @@ namespace template.SQL
         /// It can either be called with an ImageGUID or ImageName.
         /// </summary>
         /// <returns></returns>
-        public static MemoryStream GetImageFromDBToMemoryStream(Guid ImageGUID)
+        public MemoryStream GetImageFromDBToMemoryStream(Guid ImageGUID)
         {
             MemoryStream memoryStream = new MemoryStream();
             try
@@ -552,14 +562,14 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetImageFromDBToMemoryStream", "ImageGUID=" + ImageGUID, ex.Message, 2);
+                Logger.GeneralLog("GetImageFromDBToMemoryStream", "ImageGUID=" + ImageGUID, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
 
             return memoryStream;
         }
 
-        public static MemoryStream GetImageFromDBToMemoryStream(string ImageName)
+        public MemoryStream GetImageFromDBToMemoryStream(string ImageName)
         {
             MemoryStream memoryStream = new MemoryStream();
             try
@@ -589,7 +599,7 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetImageFromDBToMemoryStream", ImageName, ex.Message, 2);
+                Logger.GeneralLog("GetImageFromDBToMemoryStream", ImageName, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
 
@@ -597,7 +607,7 @@ namespace template.SQL
         }
 
 
-        public static MemoryStream GetImageFromDBToMemoryStream(Guid ImageGUID, params DbParameter[] ParamArray)
+        public MemoryStream GetImageFromDBToMemoryStream(Guid ImageGUID, params DbParameter[] ParamArray)
         {
             // Either search by GUID or by Name
             string SQLStr = "";
@@ -628,7 +638,7 @@ namespace template.SQL
             return memoryStream;
         }
 
-        public static MemoryStream GetImageFromDBToMemoryStream(string queryString, params DbParameter[] ParamArray)
+        public MemoryStream GetImageFromDBToMemoryStream(string queryString, params DbParameter[] ParamArray)
         {
             MemoryStream memoryStream = new MemoryStream();
             try
@@ -654,7 +664,7 @@ namespace template.SQL
             }
             catch (Exception ex)
             {
-                GeneralLog("GetImageFromDBToMemoryStream", queryString, ex.Message, 2);
+                Logger.GeneralLog("GetImageFromDBToMemoryStream", queryString, ex.Message, 2);
                 throw new Exception(ex.Message);
             }
 
@@ -665,7 +675,7 @@ namespace template.SQL
         /// <summary>
         /// Returns binary data from the DataBase as byte array.
         /// </summary>
-        public static byte[] GetBinary(string queryString, params DbParameter[] ParamArray)
+        public byte[] GetBinary(string queryString, params DbParameter[] ParamArray)
         {
             using (SqlConnection SQLCon = SQLConnect()) //Open SQL connection
             {
@@ -689,101 +699,7 @@ namespace template.SQL
 
         #endregion
 
-        // CREATE PARAMETER
-        public static DbParameter CreateParam(object source, string columnname)
-        {
-            if (source == null) source = DBNull.Value;
-
-            string name = iif(columnname.StartsWith("@"), columnname, string.Concat("@", columnname));
-            SqlParameter SqlP = new SqlParameter(columnname, source) { SourceColumn = columnname.Remove(0, 1) };
-            try
-            {
-                // Special code for types
-                switch (source.GetType().ToString().ToLower())
-                {
-                    case "system.data.datatable":
-                        // For datatable to be used, SqlDBType must be structured
-                        SqlP.SqlDbType = SqlDbType.Structured;
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("CREATEPARAM ERROR: " + ex.Message);
-            }
-
-            return SqlP;
-        }
-
-        // CREATE PARAMETER with custom size
-        public static DbParameter CreateParam(object source, string columnname, int size)
-        {
-            if (source == null) source = DBNull.Value;
-
-            string name = iif(columnname.StartsWith("@"), columnname, string.Concat("@", columnname));
-            SqlParameter SqlP = new SqlParameter(columnname, source) { SourceColumn = columnname.Remove(0, 1) };
-            SqlP.Size = size;
-            try
-            {
-                // Special code for types
-                switch (source.GetType().ToString().ToLower())
-                {
-                    case "system.data.datatable":
-                        // For datatable to be used, SqlDBType must be structured
-                        SqlP.SqlDbType = SqlDbType.Structured;
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("CREATEPARAM ERROR: " + ex.Message);
-            }
-
-            return SqlP;
-        }
-
-        // CREATE PARAMETER W. Custom Type Name
-        public static DbParameter CreateParam(object source, string columnname, string TypeName)
-        {
-            if (source == null) source = DBNull.Value;
-
-            string name = iif(columnname.StartsWith("@"), columnname, string.Concat("@", columnname));
-            SqlParameter SqlP = new SqlParameter(columnname, source) { SourceColumn = columnname.Remove(0, 1) };
-
-            // Special code for types
-            switch (source.GetType().ToString().ToLower())
-            {
-                case "system.data.datatable":
-                    // For datatable to be used, SqlDBType must be structured
-                    SqlP.SqlDbType = SqlDbType.Structured;
-                    break;
-            }
-
-            if (TypeName != "") SqlP.TypeName = TypeName;
-            return SqlP;
-        }
-
-        // RETURN PARAMTER
-        public static DbParameter CreateReturnParam(object source, string columnname)
-        {
-            if (source == null) source = DBNull.Value;
-            string name = iif(columnname.StartsWith("@"), columnname, string.Concat("@", columnname));
-            SqlParameter SqlP = new SqlParameter(columnname, source) { SourceColumn = columnname.Remove(0, 1) };
-            SqlP.Direction = ParameterDirection.Output;
-            return SqlP;
-        }
-
-        public static DbParameter CreateReturnParam(object source, string columnname, int size)
-        {
-            if (source == null) source = DBNull.Value;
-            string name = iif(columnname.StartsWith("@"), columnname, string.Concat("@", columnname));
-            SqlParameter SqlP = new SqlParameter(columnname, source) { SourceColumn = columnname.Remove(0, 1) };
-            SqlP.Size = size;
-            SqlP.Direction = ParameterDirection.Output;
-            return SqlP;
-        }
-
-        public static string GetSQLConnectionString(string[] ConnVariables)
+        public string GetSQLConnectionString(string[] ConnVariables)
         {
             string SQLIP = ConnVariables[0];
             string SQLDB = ConnVariables[1];
@@ -797,12 +713,7 @@ namespace template.SQL
             return SQLConnectionString;
         }
 
-        // C# IIF
-        static T iif<T>(bool expression, T truePart, T falsePart)
-        {
-            return expression ? truePart : falsePart;
-        }
-
+     
         public class SQLReturnModel
         {
             public int StatusCode { get; set; } = 0;
@@ -810,7 +721,7 @@ namespace template.SQL
             public string ErrorMessage { get; set; }
         }
 
-        public static DbParameter[] ReuseParameters(DbParameter[] Parameters)
+        public DbParameter[] ReuseParameters(DbParameter[] Parameters)
         {
             SqlParameter[] ReturnParameters = new SqlParameter[Parameters.Length];
             SqlParameterCollection bab = null;

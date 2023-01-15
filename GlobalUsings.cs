@@ -1,6 +1,5 @@
 global using static template.Code.DataTypeConversionHelperClass;
-global using static template.SQL.SQLHelperClass;
-global using static template.Code.SiteLogHelperClass;
+global using static template.SQL.SQLService;
 namespace template;
 
 public class GlobalUsings

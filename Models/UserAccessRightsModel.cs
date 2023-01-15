@@ -1,4 +1,4 @@
-namespace robotmanden.Models;
+namespace template.Models;
 
 public class UserAccessRightsModel
 {

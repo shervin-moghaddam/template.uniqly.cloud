@@ -138,9 +138,6 @@
   <data name="Link_ResetPassword" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>
-  <data name="Link_robotmandenWebsite" xml:space="preserve">
-    <value>Not an template user yet?</value>
-  </data>
   <data name="Login_UserDoesntExist" xml:space="preserve">
     <value>The email entered was not found.</value>
   </data>
@@ -182,5 +179,11 @@
   </data>
   <data name="Password_EnterPassword" xml:space="preserve">
     <value>Enter password</value>
+  </data>
+  <data name="IncorrectUsernamePassword" xml:space="preserve">
+    <value>Username or password is incorrect.</value>
+  </data>
+  <data name="NoUserPasswordInput" xml:space="preserve">
+    <value>Please type a username and password</value>
   </data>
 </root>

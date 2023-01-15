@@ -17,13 +17,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Allows the static class of SQLConnectionClass to connect via configuration.
 // Not a good practice, but the only one seeming available
-SQLConnectionClass.StaticConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//SQLConnectionClass.StaticConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+#region Services
 // Project setup
 builder.Services.AddSingleton<ProjectSetupClass>(_ =>
     builder.Configuration.GetSection("ProjectSetup").Get<ProjectSetupClass>());
 
-#region Services
+// SQL
+builder.Services.AddSingleton<SQLService>();
+
+// Global container as singleton
+builder.Services.AddSingleton<GlobalContainerService>();
+
+// Logging
+builder.Services.AddSingleton<LogService>();
 
 // Identity
 builder.Services.AddTransient<IUserStore<AccountUserModel>, UserStoreClass>();
@@ -46,8 +54,6 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 1;
 });
 
-// Global container as singleton
-builder.Services.AddSingleton<GlobalContainerService>();
 
 // MVC
 builder.Services.AddControllersWithViews();
@@ -128,7 +134,7 @@ else
 app.UseRouting();
 
 // Antiforgery
-var antiforgery = app.Services.GetRequiredService<IAntiforgery>();
+IAntiforgery antiforgery = app.Services.GetRequiredService<IAntiforgery>();
 
 app.Use((context, next) =>
 {
@@ -158,7 +164,7 @@ app.Use((context, next) =>
             // Expires after 2 hours
             Expires = DateTimeOffset.Now.AddHours(2),
 
-            // Not sure?
+            // Not sure what this does!
             MaxAge = TimeSpan.FromMinutes(240)
         }
     );

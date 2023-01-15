@@ -1447,6 +1447,7 @@ body {
   align-items: center;
   font-weight: 700;
   gap: 8px;
+  border: 0;
   width: 100%;
   padding: 16px 0;
   background: #3AAFC3;

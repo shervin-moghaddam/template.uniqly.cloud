@@ -138,9 +138,6 @@
   <data name="Link_ResetPassword" xml:space="preserve">
     <value>Glemt kodeordet?</value>
   </data>
-  <data name="Link_robotmandenWebsite" xml:space="preserve">
-    <value>Er du ikke en template bruger endnu?</value>
-  </data>
   <data name="Login_UserDoesntExist" xml:space="preserve">
     <value>Email adressen blev ikke fundet.</value>
   </data>
@@ -182,5 +179,11 @@
   </data>
   <data name="Password_EnterPassword" xml:space="preserve">
     <value>Indtast password</value>
+  </data>
+  <data name="IncorrectUsernamePassword" xml:space="preserve">
+    <value>Brugernavn eller kode er forkert.</value>
+  </data>
+  <data name="NoUserPasswordInput" xml:space="preserve">
+    <value>Indtast både brugernavn og adgangskode</value>
   </data>
 </root>

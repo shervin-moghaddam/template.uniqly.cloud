@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Threading;
 using System.Threading.Tasks;
 
-using static template.SQL.SQLHelperClass;
+using static template.SQL.SQLService;
 using static template.Code.DataTypeConversionHelperClass;
 using System.Data;
 using System.Security.Principal;

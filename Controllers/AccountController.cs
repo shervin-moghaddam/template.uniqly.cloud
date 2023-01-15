@@ -1,30 +1,15 @@
 ﻿using template.Code;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Globalization;
-using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.UI.V5.Pages.Account.Manage.Internal;
 using template.Models;
 using template.Resources;
 using template.Services;
-using static template.Code.LogClass;
-using static template.Code.DataTypeConversionHelperClass;
-using static template.SQL.SQLConnectionClass;
-using static template.SQL.SQLHelperClass;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace template.Controllers
 {
@@ -34,6 +19,7 @@ namespace template.Controllers
             IStringLocalizer<LoginResource> localizer,
             UserManager<AccountUserModel> userManager,
             SignInManager<AccountUserModel> signInManager,
+            LogService _Logger,
             ProjectSetupClass projectSetup,
             GlobalContainerService GCS)
         {
@@ -42,6 +28,7 @@ namespace template.Controllers
             GlobalContainer = GCS;
             Localizer = localizer;
             ProjectSetup = projectSetup;
+            Logger = _Logger;
         }
 
         private readonly ProjectSetupClass ProjectSetup;
@@ -50,6 +37,8 @@ namespace template.Controllers
         private readonly GlobalContainerService GlobalContainer;
         private readonly IStringLocalizer<LoginResource> Localizer;
         protected readonly IHostingEnvironment HostingEnvironment;
+        private readonly LogService Logger;
+
         private Task<AccountUserModel> GetCurrentUserAsync() => UserManager.GetUserAsync(HttpContext.User);
 
         [HttpGet]
@@ -67,9 +56,7 @@ namespace template.Controllers
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             ViewData["ReturnUrl"] = returnUrl;
-            LoginViewModel m = new LoginViewModel();
-
-            return View(m);
+            return View(new LoginViewModel());
         }
 
         [HttpPost]
@@ -77,27 +64,25 @@ namespace template.Controllers
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
+            string UserIP = HttpContext.Connection.RemoteIpAddress?.ToString();
+            
             if (ModelState.IsValid)
             {
-                var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, false,
+                SignInResult result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, false,
                     lockoutOnFailure: false);
-
+               
 
                 if (result.Succeeded)
                 {
-                    // Log
-                    string UserIP = HttpContext.Connection.RemoteIpAddress?.ToString();
-                    //var feature = HttpContext.Features.Get<IHttpConnectionFeature>();
-                    //UserIP = feature?.LocalIpAddress?.ToString();
-
-                    try
+                    Logger.SecurityLog(new SecurityLogModel
                     {
-                        SecurityLog($"Login for user name ({model.UserName})", $"Ip address:{UserIP}", 0, 0,
-                            "user_login");
-                    }
-                    catch (Exception ex)
-                    {
-                    }
+                        Identifier = "login",
+                        Text1 = $"Login for user name ({model.UserName})",
+                        IPAddress = UserIP,
+                        StatusCode = (int)SecurityLogStatusCode.Login_Success,
+                        Type = (int)LogType.Default,
+                        UserID = GetCurrentUserId().Result
+                    });
 
                     // Stores user ID into global values
                     GlobalContainer.StoreUser(model.UserName);
@@ -107,14 +92,40 @@ namespace template.Controllers
                     else
                         return RedirectToLocal(returnUrl);
                 }
-                else
+
+                // If no unsuccessful login, then show error message
+                ModelState.AddModelError(string.Empty, Localizer["IncorrectUsernamePassword"].Value);
+                Logger.SecurityLog(new SecurityLogModel
                 {
-                    ModelState.AddModelError(string.Empty, "De indtastede initialer eller kodeord er forkert");
-                    return View(model);
-                }
+                    Identifier = "login",
+                    Text1 = $"Login for user name ({model.UserName})",
+                    IPAddress = UserIP,
+                    StatusCode = (int)SecurityLogStatusCode.Login_Failed,
+                    Type = (int)LogType.Default
+                });
+                
+                return View(model);
             }
 
-            // If we got this far, something failed, redisplay form
+            
+            // If we got this far, something failed, log it and redisplay form
+            var x = Localizer["IncorrectUsernamePassword"].Value;
+            if (string.IsNullOrEmpty(model.UserName) || string.IsNullOrEmpty(model.Password))
+                ModelState.AddModelError(string.Empty, Localizer["NoUserPasswordInput"].Value);
+            else
+                ModelState.AddModelError(string.Empty, Localizer["IncorrectUsernamePassword"].Value);
+
+            // If no unsuccessful login, then show error message
+            ModelState.AddModelError(string.Empty, Localizer["IncorrectUsernamePassword"].Value);
+            Logger.SecurityLog(new SecurityLogModel
+            {
+                Identifier = "login",
+                Text1 = $"Login for user name ({model.UserName})",
+                IPAddress = UserIP,
+                StatusCode = (int)SecurityLogStatusCode.Login_Invalid,
+                Type = (int)LogType.Default
+            });
+            
             return View(model);
         }
 
