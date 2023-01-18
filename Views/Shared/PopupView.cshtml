@@ -1,0 +1,17 @@
+@model template.Models.PopupViewModel
+@{
+    Layout = null;
+}
+
+<div tabindex="-1"
+     style="z-index:@(Model.ZIndex)"
+     id="@Model.ElementID"
+     class="popup-wrapper popup-window unblurred">
+    <input class="popupIdentifier" type="hidden" id="@($"{Model.ElementID}_Identifier")" value="@Model.sourceElementIdentifier"/>
+    
+    <div tabindex="-1"
+         id="@(Model.ElementID + "-content")" 
+         style="max-width:@(Model.WidthStyle);height:@(Model.HeightStyle);max-height:95%"
+         class="popup-container unblurred">
+    </div>
+</div>

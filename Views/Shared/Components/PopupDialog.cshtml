@@ -1,0 +1,122 @@
+@inject IHtmlLocalizer<DialogResource> localizer
+@using System.Text
+@using Microsoft.AspNetCore.Mvc.Localization
+@using template.Models
+@using template.Resources
+@model template.Models.PopupDialogModel
+@{
+    // Most of the logic behind creating styles, classes, texts etc. are put 
+    // inside this viewcomponent markup instead of the viewcomponent .cs code, to avoid 
+    // having both setup variables and result variables in PopupDialogModel, 
+    // and to avoid having 2 different PopupDialogModels for setup and return view values.
+
+    // Styles
+    StringBuilder PopupDialogStyle = new StringBuilder();
+    if (Model.DialogMaxWidth > 0)
+    {
+        // Max width of window
+        PopupDialogStyle.Append(Model.DialogMaxWidth <= 100 ?
+            $"max-width: {Model.DialogMaxWidth}%; " :
+            $"max-width: {Model.DialogMaxWidth}px; ");
+    }
+
+    StringBuilder ContentStyle = new StringBuilder();
+    if (Model.ContentMaxHeight > 0)
+    {
+        // Max height of content
+        ContentStyle.Append(Model.DialogMaxWidth <= 100 ?
+            $"style=\"max-height: {Model.ContentMaxHeight}%; " :
+            $"style=\"max-height: {Model.ContentMaxHeight}px; ");
+    }
+
+    // Dialog type
+    string DialogTypeClass;
+    switch (Model.DialogType)
+    {
+        case 1:
+            DialogTypeClass = "confirmation";
+            break;
+        case 2:
+            DialogTypeClass = "error";
+            break;
+        case 3:
+            DialogTypeClass = "warning";
+            break;
+        case 4:
+            DialogTypeClass = "question";
+            break;
+        default:
+            DialogTypeClass = "default";
+            break;
+    }
+
+    // If a custom OnClick event as been assigned
+    string OnClick = "";
+    if (!string.IsNullOrEmpty(Model.OnClickFunctionName)) OnClick = $"onClick(\"{Model.OnClickFunctionName}(this)";
+   
+}
+
+<div class="dialog-popup-wrapper dialog-popup unblurred @DialogTypeClass" style="@PopupDialogStyle">
+    <div class="top-bar">
+        <i class="default-icon fas fa-comment-exclamation"></i>
+        <i class="error-icon fas fa-times-circle"></i>
+        <i class="warning-icon fas fa-exclamation-triangle"></i>
+        <i class="question-icon fas fa-question-circle"></i>
+        @if (!string.IsNullOrEmpty(Model.TitleCustomText))
+        {
+            <a>@Model.TitleCustomText</a>
+        }
+        else if (!string.IsNullOrEmpty(Model.TitleTextLangKey))
+        {
+            <a>@localizer[Model.TitleTextLangKey]</a>
+        }
+        @if (Model.ShowCloseButton)
+        {
+            <div id="dialog_cancel" class="close-icon" >
+                <i class="far fa-times"></i>
+            </div>
+        }
+        else
+        {
+            <div class="close-icon"></div>
+        }
+
+
+    </div>
+    <div class="content" style="@ContentStyle">
+        @if (!string.IsNullOrEmpty(Model.CustomText) || !string.IsNullOrEmpty(Model.ContentTextLangKey))
+        {
+            <div class="text-only">
+                @{
+                    var LocalizedText = localizer[Model.ContentTextLangKey];
+                    LocalizedText.Value.Replace("<br>", Environment.NewLine);
+                }
+                <a>@Model.CustomText@LocalizedText</a>
+            </div>
+        }
+    </div>
+    <div class="bottom-bar">
+        @foreach (PopupDialogModel.PopupDialogButton Btn in Model.ButtonList)
+        {
+            if (!string.IsNullOrEmpty(Btn.HTMLContent))
+            {
+                @Html.Raw(Btn.HTMLContent)
+            }
+            else
+            {
+                string ElementClasses = $"{Btn.ColorClass} {Btn.ElementClassList}";
+                if (Btn.AlignRight) ElementClasses += " right-aligned ";
+                <div id="@Btn.ElementID" class="dialog-button @ElementClasses" @Html.Raw(OnClick)>
+                    @if (!string.IsNullOrEmpty(Btn.CustomText))
+                    {
+                        <a>@Btn.CustomText</a>
+                    }
+                    else if (!string.IsNullOrEmpty(Btn.TextLangKey))
+                    {
+                        <a>@localizer[Btn.TextLangKey]</a>
+                    }
+                </div>
+            }
+        }
+    </div>
+</div>
