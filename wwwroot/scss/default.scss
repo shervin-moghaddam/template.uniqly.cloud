@@ -1,8 +1,8 @@
-@import "wwwroot/scss/colorscheme.scss";
 @import "wwwroot/scss/libs/include-media.scss";
 @import "wwwroot/scss/_constant.scss";
+@import "wwwroot/scss/_darkmode.scss";
+@import "wwwroot/scss/_lightmode.scss";
 @import "wwwroot/scss/uniqly-forms.scss";
-
 
 // Vars
 $site-maxwidth: 2000px;
@@ -21,7 +21,6 @@ body {
   font-family: "inter";
   margin: 0;
   overflow-x: hidden;
-  background-color: white;
 }
 
 .page-transition-in {

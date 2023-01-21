@@ -1,0 +1,37 @@
+html[color-theme="dark"] {
+    // Sidebar
+    --sidebar-border-color: #292932;
+    --sidebar-navitem-hover: #292932FF;
+    --sidebar-navitem-active: #3AAFC3;
+    --sidebar-background-color: #1C1C24;
+    --sidebar-nav-item-bg: var(--sidebar-border-color);
+    --sidebar-navitem-text-active: #3AAFC3;
+    --sidebar-divider-text: #696974;
+    --sidebar-divider: var(--sidebar-border-color);
+    --topbar-search-bg: #13131A;
+    --topbar-text: #696974;
+    --topbar-search-text: var(--topbar-text);
+
+    // Mainpages
+    --background-color: #13131A;
+    --gray-100: #FAFAFB;
+    --gray-200: #92929D;
+    --gray-300: #7d8597;
+    --gray-400: #44444F;
+    --gray-500: #34343C;
+    --gray-600: #292932;
+    --gray-700: #292932;
+    --gray-800: #13131a;
+    --light-color: #e5f4f7;
+    --dark-color: var(--gray-100);
+    
+    --body-color:var(--gray-800);
+    // sub color
+    --alert-bg-color: var(--gray-800);
+    --popup-card-color:var(--gray-600);
+    --popup-card-border-colo:var(--gray-800);
+    --alert-allline-bg-color:var(--gray-500);
+    --alert-title-color:#1C1C24;
+
+
+  }

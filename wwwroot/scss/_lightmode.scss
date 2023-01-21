@@ -1,0 +1,56 @@
+:root {
+    // Sidebar
+    --sidebar-border-color: #E5E6E9;
+    --sidebar-navitem-hover: #E5F2F5;
+    --sidebar-navitem-active: #3AAFC3;
+    --sidebar-background-color: var(--white-color);
+    --sidebar-nav-item-bg: var(--white-color);
+    --sidebar-navitem-text-active: var(--black-color);;
+    --sidebar-divider-text: #D9D9D9;
+    --sidebar-divider: #FAFAFA;
+    --sidebar-badge-bg-red: #ec6432;
+    --topbar-search-bg: var(--white-color);
+    --topbar-text: var(--black-color);
+    --topbar-search-text: #696974;
+    
+    // Mainpages
+    --background-color: #FAFAFA;
+    --primary-color: #33415c;
+    --secondary-color: #3aafc3;
+    --secondary2-color: #ec6432;
+    --success-color: #27ae60;
+    --danger-color: #eb5757;
+    --warning-color: #e2b93b;
+    --info-color: #2f80ed;
+    --light-color: #e5f4f7;
+    --dark-color: #001233;
+
+    // Text
+    --text-color-primary: #ffffff; // white in light mode
+    --text-color-invert: #000000; // black in light mode
+    
+    
+    
+    // Gray-color
+    --gray-100: #33415c;
+    --gray-200: #5c677d;
+    --gray-300: #7d8597;
+    --gray-400: #979dac;
+    --gray-500: #c5c8d0;
+    --gray-600: #e5e6e9;
+    --gray-700: #fafafa;
+    --body-color: #fafafa;
+
+    // Sub-color
+    --alert-bg-color: rgba(0, 18, 51, 0.86);
+    --popup-card-color: #f1f9f4;
+    --popup-card-border-colo:rgb(206, 230, 206)
+    
+}
+html {
+    // Same for both light and dark mode
+    --white-color: #ffffff;
+    --black-color: #000000;    
+}
+
+    

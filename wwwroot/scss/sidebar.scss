@@ -9,6 +9,7 @@
     display: flex;
 
     & .login-text {
+      color: var(--topbar-text);
       font-size: 12px;
       font-weight: 400;
       margin-bottom: 0;
@@ -19,14 +20,16 @@
     .sidebar {
       width: 270px;
       border-right: 1px solid var(--sidebar-border-color);
-
-      transition: width .2s ease-in-out;
+      transition: width 0.5s ease-in-out;
+      background-color: var(--sidebar-background-color);
 
       .side-nav .side-nav-items .side-nav-item .nav-link {
         transition: all .1s ease-in-out;
+
         &:hover {
           cursor: pointer;
-          background: rgba(var(--sidebar-navitem-active), 0.15);
+          color: var(--sidebar-navitem-text-active);
+          background: var(--sidebar-navitem-hover);
         }
       }
 
@@ -113,11 +116,13 @@
             top: 0;
             overflow: hidden;
             transition: all 0.6s ease;
-
+            border-radius: 6px;
+            
+            margin: 0 0 5px 0;
 
             .nav-link {
               display: flex;
-              border-radius: 6px;
+
               padding: 14px 12px 13px 14px;
               color: var(--gray-100);
               text-decoration: none;
@@ -128,7 +133,7 @@
               height: 50px;
               width: 100%;
               z-index: 999;
-              /*background: var(--white-color); */
+              background-color: var(--sidebar-nav-item-bg);
               justify-content: center;
               align-items: center;
 
@@ -150,7 +155,7 @@
                     color: var(--gray-200);
                     width: 16px;
                     height: 16px;
-                    transition: all .9s;
+                    transition: all .2s;
                   }
 
                   // position: relative;
@@ -171,14 +176,15 @@
             .sidenav-submenu {
               margin-top: -79px;
               padding: 0;
-              transition: all 1.5s ease;
+              transition: all .5s ease;
               list-style: none;
-
+             
               .nav-item {
                 display: inline-block;
                 width: 100%;
                 padding: 12px 20px 12px 44px;
-
+                margin-bottom: -4px;
+                
                 a {
                   width: 100%;
                   height: 13px;
@@ -190,13 +196,20 @@
                   overflow: hidden;
                 }
 
+                &:hover {
+                  cursor: pointer;
+                  a {
+                    color: var(--sidebar-navitem-text-active) !important;
+                  }
+                }
+
                 &:first-child {
                   margin-top: 10px;
                 }
 
                 &.active {
                   a {
-                    color: rgb(var(--sidebar-navitem-active));
+                    color: var(--white-color);
                     font-weight: 600;
                   }
                 }
@@ -209,7 +222,7 @@
                 list-style: none;
                 width: 100%;
                 margin-top: 50px;
-
+                
                 .nav-item {
                   a {
                     width: 100%;
@@ -225,7 +238,7 @@
 
                   &.active {
                     a {
-                      color: rgb(var(--sidebar-navitem-active));
+                      color: var(--white-color);
                       font-weight: 600;
                     }
                   }
@@ -234,7 +247,7 @@
             }
 
             &.active .nav-link {
-              background: rgb(var(--sidebar-navitem-active));
+              background: var(--sidebar-navitem-active);
               color: var(--white-color);
 
               .extra-nav-con {
@@ -258,9 +271,9 @@
           .side-nav-text {
             font-size: 12px;
             font-weight: 600;
-            color: var(--gray-500);
+            color: var(--sidebar-divider-text);
             padding-top: 10px;
-            border-top: 1px solid var(--gray-700);
+            border-top: 1px solid var(--sidebar-divider);
             margin-top: 10px;
             margin-bottom: 4px;
           }
@@ -367,14 +380,14 @@
       background: #FAFAFA;
       flex-grow: 1;
       // height: 100vh;
-      .top-appbar {
-        background: var(--white-color);
+      .topbar {
+        background: var(--sidebar-background-color);
         width: 100%;
         height: 62px;
         display: flex;
         border-bottom: 1px solid var(--sidebar-border-color);
 
-        .top-app-left {
+        .topbar-left {
           display: flex;
 
           .bars-icon {
@@ -406,26 +419,33 @@
               color: var(--gray-400);
               padding: 10px;
               border-radius: 50%;
-              border: 1px solid var(--white-color);
+              border: 1px solid rgba(0,0,0,0);
               transition: all 0.2s ease-in;
               cursor: pointer;
 
               &:hover {
-                border: 1px solid var(--gray-600);
-                background: var(--gray-700);
+                border: 1px solid var(--sidebar-border-color);
+                background: var(--sidebar-divider);
               }
             }
           }
 
           .search-bar {
             padding-top: 8px;
+            color: var(--topbar-search-text);
+
+            & input {
+              background-color: var(--topbar-search-bg);
+
+            }
+
             @include media("<tablet") {
               display: none;
             }
           }
         }
 
-        .top-app-right {
+        .topbar-right {
           display: flex;
           align-items: center;
           margin-left: auto;
@@ -445,7 +465,7 @@
             margin-right: 26px;
           }
 
-          .top-appbar-badge {
+          .topbar-badge {
 
             padding-right: 26px;
 
@@ -464,7 +484,7 @@
       .content-body {
         width: 100%;
         height: 94vh;
-        background: #FAFAFA;
+        background-color: var(--background-color);
         overflow-y: scroll;
       }
     }
@@ -493,7 +513,7 @@
       font-weight: 600;
       padding: 3px;
       color: var(--white-color);
-      background: var(--secondary2-color);
+      background: var(--sidebar-badge-bg-red);
       outline: 2px solid var(--white-color);
       display: flex;
       justify-content: center;

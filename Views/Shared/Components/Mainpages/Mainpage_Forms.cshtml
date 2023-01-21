@@ -1,0 +1,171 @@
+
+<div class="form-switch">
+    <input id="color-theme-changer" type="checkbox" class="switch" onchange="changeTheme()"/>
+    <label for="color-theme-changer">Dark and ligtht mode</label>
+</div>
+
+<div class="p-5">
+    <!-- Default -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch" />
+        <label for="s2d">Default switch input</label>
+    </div>
+    <!-- Checked  -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch" checked/>
+        <label for="s2d">Checked switch input</label>
+    </div>
+    <!-- disabled checked-->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch" disabled/>
+        <label for="s2d">Disabled switch input</label>
+    </div>
+    <!-- checked -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch" disabled/>
+        <label for="s2d">Disabled checked switch input</label>
+    </div>
+    <!-- outline -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch outline" checked/>
+        <label for="s2d">Outline Switch Default </label>
+    </div>
+    <!-- medium size -->
+    <div class="form-switch md">
+        <input id="s2d" type="checkbox" class="switch" checked/>
+        <label class="switch-label" for="s2d">medium size switch</label>
+    </div>
+    <!-- large size -->
+    <div class="form-switch lg">
+        <input id="s2d" type="checkbox" class="switch secondary" checked/>
+        <label class="switch-label" for="s2d">Large size switch</label>
+    </div>
+</div>
+<!-- ================ color variation ========================= -->
+
+<div class="p-5">
+    <!-- primary color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch" checked/>
+        <label for="s2d">Switch primary</label>
+    </div>
+    <!-- secondary color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch secondary" checked/>
+        <label for="s2d">Switch secondary</label>
+    </div>
+    <!-- secondary2 color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch secondary2" checked/>
+        <label for="s2d">Switch secondary2</label>
+    </div>
+    <!-- success color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch success" checked/>
+        <label for="s2d">Switch secondary2</label>
+    </div>
+    <!-- danger color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch danger" checked/>
+        <label for="s2d">Switch danger</label>
+    </div>
+    <!-- warning color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch warning" checked/>
+        <label for="s2d">Switch warning</label>
+    </div>
+    <!-- info color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch info" checked/>
+        <label for="s2d">Switch info</label>
+    </div>
+    <!-- dark color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch dark" checked/>
+        <label for="s2d">Switch dark</label>
+    </div>
+</div>
+
+<!-- ================ color variation outline ========================= -->
+<div class="p-5">
+    <!-- primary color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch outline" checked/>
+        <label for="s2d">Outline Switch Primary </label>
+    </div>
+    <!-- secondary color -->
+    <div class="form-switch">
+        <input
+            id="s2d"
+            type="checkbox"
+            class="switch outline secondary"
+            checked/>
+        <label for="s2d">Outline Switch secondary</label>
+    </div>
+    <!-- secondary2 color -->
+    <div class="form-switch">
+        <input
+            id="s2d"
+            type="checkbox"
+            class="switch outline secondary2"
+            checked/>
+        <label for="s2d">Outline Switch secondary2</label>
+    </div>
+    <!-- success color -->
+    <div class="form-switch">
+        <input
+            id="s2d"
+            type="checkbox"
+            class="switch outline success"
+            checked/>
+        <label for="s2d">Outline Switch success</label>
+    </div>
+    <!-- danger color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch outline danger" checked/>
+        <label for="s2d">Outline Switch danger</label>
+    </div>
+    <!-- warning color -->
+    <div class="form-switch">
+        <input
+            id="s2d"
+            type="checkbox"
+            class="switch outline warning"
+            checked/>
+        <label for="s2d">Outline Switch warning</label>
+    </div>
+    <!-- info color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch outline info" checked/>
+        <label for="s2d">Outline Switch info</label>
+    </div>
+    <!-- dark color -->
+    <div class="form-switch">
+        <input id="s2d" type="checkbox" class="switch outline dark" checked/>
+        <label for="s2d">Outline Switch dark</label>
+    </div>
+</div>
+
+<script>
+ let trans = () => {
+        document.documentElement.classList.add('transition');
+        window.setTimeout(() => {
+            document.documentElement.classList.remove('transition');
+        }, 1000)
+    }
+function changeTheme() {
+     
+    let chkbox = document.getElementById('color-theme-changer');
+    console.log(chkbox.checked);
+    if(chkbox.checked) {
+        trans()
+        document.documentElement.setAttribute('color-theme', 'dark')
+    } else {
+        trans()
+        document.documentElement.setAttribute('color-theme', 'light')
+    }
+
+   
+}
+</script>
+<script src="js/forms.js"></script>
