@@ -1,8 +1,20 @@
 :root {
+    // Global
+    --global-turquoise: #3AAFC3;
+    --global-red: #EB5757FF;
+    --global-green: #27AE60FF;
+    --global-yellow: #e2b93b;
+    --global-blue: #2f80ed;
+    
+    // Toggle-switch
+    --toggle-switch-border: #e5e6e9;
+    --toggle-switch-disabled: #e5e6e9;
+    --toggle-switch-switch: #ffffff;
+    
     // Sidebar
     --sidebar-border-color: #E5E6E9;
     --sidebar-navitem-hover: #E5F2F5;
-    --sidebar-navitem-active: #3AAFC3;
+    --sidebar-navitem-active: var(--global-turquoise);
     --sidebar-background-color: var(--white-color);
     --sidebar-nav-item-bg: var(--white-color);
     --sidebar-navitem-text-active: var(--black-color);;

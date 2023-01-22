@@ -95,10 +95,6 @@ button:focus {
   position: absolute;
 }
 
-.p-5 {
-  padding: 3rem;
-}
-
 .bg-primary {
   background: var(--primary-color) !important;
 }
@@ -140,9 +136,13 @@ button:focus {
 }
 
 html[color-theme=dark] {
+  --global-turquoise: #3AAFC3;
+  --global-red: #EB5757FF;
+  --toggle-switch-border: #e5e6e9;
+  --toggle-switch-disabled: #e5e6e9;
   --sidebar-border-color: #292932;
   --sidebar-navitem-hover: #292932FF;
-  --sidebar-navitem-active: #3AAFC3;
+  --sidebar-navitem-active: var(--global-turquoise);
   --sidebar-background-color: #1C1C24;
   --sidebar-nav-item-bg: var(--sidebar-border-color);
   --sidebar-navitem-text-active: #3AAFC3;
@@ -171,9 +171,17 @@ html[color-theme=dark] {
 }
 
 :root {
+  --global-turquoise: #3AAFC3;
+  --global-red: #EB5757FF;
+  --global-green: #27AE60FF;
+  --global-yellow: #e2b93b;
+  --global-blue: #2f80ed;
+  --toggle-switch-border: #e5e6e9;
+  --toggle-switch-disabled: #e5e6e9;
+  --toggle-switch-switch: #ffffff;
   --sidebar-border-color: #E5E6E9;
   --sidebar-navitem-hover: #E5F2F5;
-  --sidebar-navitem-active: #3AAFC3;
+  --sidebar-navitem-active: var(--global-turquoise);
   --sidebar-background-color: var(--white-color);
   --sidebar-nav-item-bg: var(--white-color);
   --sidebar-navitem-text-active: var(--black-color);
@@ -211,6 +219,243 @@ html[color-theme=dark] {
 html {
   --white-color: #ffffff;
   --black-color: #000000;
+}
+
+.uniqly .toggle-switch {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.uniqly .toggle-switch input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 20px;
+  width: 33px;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid var(--toggle-switch-border);
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+.uniqly .toggle-switch input[type=checkbox].outline {
+  width: 38px;
+  height: 20px;
+}
+.uniqly .toggle-switch input[type=checkbox].outline::after {
+  width: 24px;
+  height: 24px;
+  top: -2px;
+  left: -2px;
+}
+.uniqly .toggle-switch input[type=checkbox].outline:checked {
+  border: 1px solid var(--toggle-switch-border);
+}
+.uniqly .toggle-switch input[type=checkbox].outline:checked:after {
+  background: var(--toggle-switch-border);
+}
+.uniqly .toggle-switch input[type=checkbox].outline:checked {
+  background: none;
+}
+.uniqly .toggle-switch input[type=checkbox].outline:disabled {
+  border: 1px solid var(--toggle-switch-disabled);
+}
+.uniqly .toggle-switch input[type=checkbox].outline:disabled:checked::after {
+  background: var(--toggle-switch-disabled);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.turquoise2 {
+  background-color: red;
+}
+.uniqly .toggle-switch input[type=checkbox].outline.secondary2:checked {
+  border: 1px solid var(--global-red);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.secondary2:checked::after {
+  background: var(--global-red);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.success:checked {
+  border: 1px solid var(--success-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.success:checked::after {
+  background: var(--success-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.danger:checked {
+  border: 1px solid var(--danger-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.danger:checked::after {
+  background: var(--danger-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.warning:checked {
+  border: 1px solid var(--warning-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.warning:checked::after {
+  background: var(--warning-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.info:checked {
+  border: 1px solid var(--info-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.info:checked::after {
+  background: var(--info-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.dark:checked {
+  border: 1px solid var(--dark-color);
+}
+.uniqly .toggle-switch input[type=checkbox].outline.dark:checked::after {
+  background: var(--dark-color);
+}
+.uniqly .toggle-switch input[type=checkbox]:after {
+  content: "";
+  display: block;
+  left: 2px;
+  top: 3px;
+  right: 2px;
+  position: absolute;
+  transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+}
+.uniqly .toggle-switch input[type=checkbox]:checked:after {
+  background-color: var(--white-color);
+}
+.uniqly .toggle-switch input[type=checkbox].secondary:checked {
+  --b: var(--secondary-color);
+  --bc: var(--secondary-color);
+}
+.uniqly .toggle-switch input[type=checkbox].secondary2:checked {
+  --b: var(--secondary2-color);
+  --bc: var(--secondary2-color);
+}
+.uniqly .toggle-switch input[type=checkbox].success:checked {
+  --b: var(--success-color);
+  --bc: var(--success-color);
+}
+.uniqly .toggle-switch input[type=checkbox].danger:checked {
+  --b: var(--danger-color);
+  --bc: var(--danger-color);
+}
+.uniqly .toggle-switch input[type=checkbox].warning:checked {
+  --b: var(--warning-color);
+  --bc: var(--warning-color);
+}
+.uniqly .toggle-switch input[type=checkbox].info:checked {
+  --b: var(--info-color);
+  --bc: var(--info-color);
+}
+.uniqly .toggle-switch input[type=checkbox].dark:checked {
+  --b: var(--dark-color);
+  --bc: var(--dark-color);
+}
+.uniqly .toggle-switch input[type=checkbox]:disabled {
+  --b: var(--white-color);
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+.uniqly .toggle-switch input[type=checkbox]:disabled:checked {
+  --b: var(--gray-400);
+  --bc: none;
+}
+.uniqly .toggle-switch input[type=checkbox]:disabled:checked::after {
+  top: 4px;
+}
+.uniqly .toggle-switch input[type=checkbox]:disabled + label {
+  cursor: not-allowed;
+  color: var(--gray-400);
+}
+.uniqly .toggle-switch input[type=checkbox]:not(.switch) {
+  width: 21px;
+}
+.uniqly .toggle-switch input[type=checkbox]:not(.switch):after {
+  opacity: var(--o, 0);
+}
+.uniqly .toggle-switch input[type=checkbox]:not(.switch):checked {
+  --o: 1;
+}
+.uniqly .toggle-switch input[type=checkbox] + label {
+  font-size: 14px;
+  color: var(--gray-100);
+  line-height: 21px;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  margin-left: 4px;
+}
+.uniqly .toggle-switch .switch {
+  width: 33px;
+  border-radius: 11px;
+}
+.uniqly .toggle-switch .switch:after {
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background: var(--gray-600);
+  transform: translateX(var(--x, 0));
+}
+.uniqly .toggle-switch .switch:checked {
+  --ab: var(--white-color);
+  --x: 15px;
+}
+.uniqly .toggle-switch .switch:disabled:not(:checked):after {
+  opacity: 0.6;
+}
+.uniqly .toggle-switch.md input[type=checkbox] {
+  width: 45px;
+  height: 26px;
+}
+.uniqly .toggle-switch.md .switch {
+  border-radius: 800px;
+}
+.uniqly .toggle-switch.md .switch::after {
+  width: 18px;
+  height: 18px;
+  left: 3px;
+}
+.uniqly .toggle-switch.md .switch:checked {
+  --x: 18px;
+}
+.uniqly .toggle-switch.lg input[type=checkbox] {
+  width: 57px;
+  height: 32px;
+}
+.uniqly .toggle-switch.lg .switch {
+  border-radius: 800px;
+}
+.uniqly .toggle-switch.lg .switch::after {
+  width: 24px;
+  height: 24px;
+  left: 3px;
+}
+.uniqly .toggle-switch.lg .switch:checked {
+  --x: 24px;
+}
+.uniqly .toggle-switch.turquoise input[type=checkbox]:checked {
+  background: var(--global-turquoise);
+}
+.uniqly .toggle-switch.turquoise input[type=checkbox]:checked::after {
+  background: var(--toggle-switch-switch);
+}
+.uniqly turquoise.outline:checked {
+  border: 1px solid var(--global-turquoise);
+}
+.uniqly .toggle-switch.turquoise input[type=checkbox]:checked {
+  background: var(--global-turquoise);
+}
+.uniqly .toggle-switch.turquoise input[type=checkbox]:checked::after {
+  background: var(--toggle-switch-switch);
+}
+.uniqly .toggle-switch.red input[type=checkbox]:checked {
+  background: var(--global-red);
+}
+.uniqly .toggle-switch.red input[type=checkbox]:checked::after {
+  background: var(--toggle-switch-switch);
+}
+.uniqly red.outline:checked {
+  border: 1px solid var(--global-red);
+}
+.uniqly .toggle-switch.red input[type=checkbox]:checked {
+  background: var(--global-red);
+}
+.uniqly .toggle-switch.red input[type=checkbox]:checked::after {
+  background: var(--toggle-switch-switch);
 }
 
 .uniqly {
@@ -528,226 +773,6 @@ html {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
-}
-.uniqly .form-switch {
-  margin-top: 7px;
-  margin-bottom: 7px;
-}
-.uniqly .form-switch .switch-label {
-  color: var(--gray-100);
-}
-.uniqly .form-switch input[type=checkbox] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  height: 20px;
-  width: 33px;
-  outline: none;
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  margin: 0;
-  cursor: pointer;
-  border: 1px solid var(--bc, var(--gray-600));
-  background: var(--b, var(--w));
-  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
-}
-.uniqly .form-switch input[type=checkbox].outline {
-  width: 38px;
-  height: 20px;
-}
-.uniqly .form-switch input[type=checkbox].outline::after {
-  width: 24px;
-  height: 24px;
-  top: -2px;
-  left: -2px;
-}
-.uniqly .form-switch input[type=checkbox].outline:checked {
-  border: 1px solid var(--gray-100);
-}
-.uniqly .form-switch input[type=checkbox].outline:checked:after {
-  background: var(--gray-100);
-}
-.uniqly .form-switch input[type=checkbox].outline:checked {
-  background: none;
-}
-.uniqly .form-switch input[type=checkbox].outline:disabled {
-  border: 1px solid var(--gray-400);
-}
-.uniqly .form-switch input[type=checkbox].outline:disabled:checked::after {
-  background: var(--gray-400);
-}
-.uniqly .form-switch input[type=checkbox].outline.secondary:checked {
-  border: 1px solid var(--secondary-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.secondary:checked::after {
-  background: var(--secondary-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.secondary2:checked {
-  border: 1px solid var(--secondary2-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.secondary2:checked::after {
-  background: var(--secondary2-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.success:checked {
-  border: 1px solid var(--success-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.success:checked::after {
-  background: var(--success-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.danger:checked {
-  border: 1px solid var(--danger-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.danger:checked::after {
-  background: var(--danger-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.warning:checked {
-  border: 1px solid var(--warning-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.warning:checked::after {
-  background: var(--warning-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.info:checked {
-  border: 1px solid var(--info-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.info:checked::after {
-  background: var(--info-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.dark:checked {
-  border: 1px solid var(--dark-color);
-}
-.uniqly .form-switch input[type=checkbox].outline.dark:checked::after {
-  background: var(--dark-color);
-}
-.uniqly .form-switch input[type=checkbox]:after {
-  content: "";
-  display: block;
-  left: 2px;
-  top: 3px;
-  right: 2px;
-  position: absolute;
-  transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
-}
-.uniqly .form-switch input[type=checkbox]:checked:after {
-  background-color: var(--white-color);
-}
-.uniqly .form-switch input[type=checkbox]:checked {
-  --b: var(--gray-100);
-  --bc: var(--gray-100);
-  --d-o: 0.3s;
-  --d-t: 0.6s;
-  --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
-}
-.uniqly .form-switch input[type=checkbox].secondary:checked {
-  --b: var(--secondary-color);
-  --bc: var(--secondary-color);
-}
-.uniqly .form-switch input[type=checkbox].secondary2:checked {
-  --b: var(--secondary2-color);
-  --bc: var(--secondary2-color);
-}
-.uniqly .form-switch input[type=checkbox].success:checked {
-  --b: var(--success-color);
-  --bc: var(--success-color);
-}
-.uniqly .form-switch input[type=checkbox].danger:checked {
-  --b: var(--danger-color);
-  --bc: var(--danger-color);
-}
-.uniqly .form-switch input[type=checkbox].warning:checked {
-  --b: var(--warning-color);
-  --bc: var(--warning-color);
-}
-.uniqly .form-switch input[type=checkbox].info:checked {
-  --b: var(--info-color);
-  --bc: var(--info-color);
-}
-.uniqly .form-switch input[type=checkbox].dark:checked {
-  --b: var(--dark-color);
-  --bc: var(--dark-color);
-}
-.uniqly .form-switch input[type=checkbox]:disabled {
-  --b: var(--white-color);
-  cursor: not-allowed;
-  opacity: 0.9;
-}
-.uniqly .form-switch input[type=checkbox]:disabled:checked {
-  --b: var(--gray-400);
-  --bc: none;
-}
-.uniqly .form-switch input[type=checkbox]:disabled:checked::after {
-  top: 4px;
-}
-.uniqly .form-switch input[type=checkbox]:disabled + label {
-  cursor: not-allowed;
-  color: var(--gray-400);
-}
-.uniqly .form-switch input[type=checkbox]:not(.switch) {
-  width: 21px;
-}
-.uniqly .form-switch input[type=checkbox]:not(.switch):after {
-  opacity: var(--o, 0);
-}
-.uniqly .form-switch input[type=checkbox]:not(.switch):checked {
-  --o: 1;
-}
-.uniqly .form-switch input[type=checkbox] + label {
-  font-size: 14px;
-  color: var(--gray-100);
-  line-height: 21px;
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-  margin-left: 4px;
-}
-.uniqly .form-switch .switch {
-  width: 33px;
-  border-radius: 11px;
-}
-.uniqly .form-switch .switch:after {
-  left: 2px;
-  top: 2px;
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  background: var(--gray-600);
-  transform: translateX(var(--x, 0));
-}
-.uniqly .form-switch .switch:checked {
-  --ab: var(--white-color);
-  --x: 15px;
-}
-.uniqly .form-switch .switch:disabled:not(:checked):after {
-  opacity: 0.6;
-}
-.uniqly .form-switch.md input[type=checkbox] {
-  width: 45px;
-  height: 26px;
-}
-.uniqly .form-switch.md .switch {
-  border-radius: 800px;
-}
-.uniqly .form-switch.md .switch::after {
-  width: 18px;
-  height: 18px;
-  left: 3px;
-}
-.uniqly .form-switch.md .switch:checked {
-  --x: 18px;
-}
-.uniqly .form-switch.lg input[type=checkbox] {
-  width: 57px;
-  height: 32px;
-}
-.uniqly .form-switch.lg .switch {
-  border-radius: 800px;
-}
-.uniqly .form-switch.lg .switch::after {
-  width: 24px;
-  height: 24px;
-  left: 3px;
-}
-.uniqly .form-switch.lg .switch:checked {
-  --x: 24px;
 }
 .uniqly .custom-input-field {
   margin-bottom: 30px;

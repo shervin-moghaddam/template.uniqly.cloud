@@ -1,8 +1,16 @@
 html[color-theme="dark"] {
+    // Global
+    --global-turquoise: #3AAFC3;
+    --global-red: #EB5757FF;
+
+    // Toggle-switch
+    --toggle-switch-border: #e5e6e9;
+    --toggle-switch-disabled: #e5e6e9;
+    
     // Sidebar
     --sidebar-border-color: #292932;
     --sidebar-navitem-hover: #292932FF;
-    --sidebar-navitem-active: #3AAFC3;
+    --sidebar-navitem-active: var(--global-turquoise);
     --sidebar-background-color: #1C1C24;
     --sidebar-nav-item-bg: var(--sidebar-border-color);
     --sidebar-navitem-text-active: #3AAFC3;
