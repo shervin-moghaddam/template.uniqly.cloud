@@ -1,17 +1,23 @@
-@mixin toggle-switch-outline($class-color-name, $color-var, $type:"") {
-  .toggle-switch.#{$class-color-name} {
-    input[type="checkbox"]:checked {
-      background: var($color-var);
-      &::after {
-        background: var(--toggle-switch-switch);
+@mixin toggle-switch($class-color-name, $color-var, $type:"") {
+  @if $type == "outline" {
+    .toggle-switch.#{$class-color-name}.outline {
+      input[type="checkbox"]:checked {
+        background: var(--global-secondary);
+        border: 1px solid var($color-var);
+
+        &::after {
+          background: var($color-var);
+        }
       }
     }
-  }
+  } @else {
+    .toggle-switch.#{$class-color-name} {
+      input[type="checkbox"]:checked {
+        background: var($color-var);
 
-  @if $type == "outline" {
-    #{$class-color-name}.outline {
-      &:checked {
-        border: 1px solid var($color-var);
+        &::after {
+          background: var(--toggle-switch-switch);
+        }
       }
     }
   }
@@ -34,9 +40,7 @@
       position: relative;
       margin: 0;
       cursor: pointer;
-      //border: 2px solid var(--bc, var(--gray-600));
       border: 1px solid var(--toggle-switch-border);
-      // background: var(--b);
       transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
 
       // outline
@@ -70,60 +74,6 @@
             background: var(--toggle-switch-disabled);
           }
         }
-
-        // outline color variation
-        &.turquoise2 {
-          background-color: red;
-
-        }
-
-        &.secondary2:checked {
-          border: 1px solid var(--global-red);
-
-          &::after {
-            background: var(--global-red);
-          }
-        }
-
-        &.success:checked {
-          border: 1px solid var(--success-color);
-
-          &::after {
-            background: var(--success-color);
-          }
-        }
-
-        &.danger:checked {
-          border: 1px solid var(--danger-color);
-
-          &::after {
-            background: var(--danger-color);
-          }
-        }
-
-        &.warning:checked {
-          border: 1px solid var(--warning-color);
-
-          &::after {
-            background: var(--warning-color);
-          }
-        }
-
-        &.info:checked {
-          border: 1px solid var(--info-color);
-
-          &::after {
-            background: var(--info-color);
-          }
-        }
-
-        &.dark:checked {
-          border: 1px solid var(--dark-color);
-
-          &::after {
-            background: var(--dark-color);
-          }
-        }
       }
 
       &:after {
@@ -133,91 +83,15 @@
         top: 3px;
         right: 2px;
         position: absolute;
-        transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
-        opacity var(--d-o, 0.2s);
+        transition: transform 0.3s ease,
+        background-color 0.3s ease;
+        //opacity var(--d-o, 0.2s);
       }
 
       &:checked:after {
         background-color: var(--white-color);
       }
-
-      //
-      //&:checked {
-      //  --b: var(--gray-100);
-      //  --bc: var(--gray-100);
-      //  --d-o: 0.3s;
-      //  --d-t: 0.6s;
-      //  --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
-      //}
-
-      // color variation
-      &.secondary:checked {
-        --b: var(--secondary-color);
-        --bc: var(--secondary-color);
-      }
-
-      &.secondary2:checked {
-        --b: var(--secondary2-color);
-        --bc: var(--secondary2-color);
-      }
-
-      &.success:checked {
-        --b: var(--success-color);
-        --bc: var(--success-color);
-      }
-
-      &.danger:checked {
-        --b: var(--danger-color);
-        --bc: var(--danger-color);
-      }
-
-      &.warning:checked {
-        --b: var(--warning-color);
-        --bc: var(--warning-color);
-      }
-
-      &.info:checked {
-        --b: var(--info-color);
-        --bc: var(--info-color);
-      }
-
-      &.dark:checked {
-        --b: var(--dark-color);
-        --bc: var(--dark-color);
-      }
-
-      &:disabled {
-        --b: var(--white-color);
-        cursor: not-allowed;
-        opacity: 0.9;
-
-        &:checked {
-          --b: var(--gray-400);
-          --bc: none;
-
-          &::after {
-            top: 4px;
-          }
-        }
-
-        & + label {
-          cursor: not-allowed;
-          color: var(--gray-400);
-        }
-      }
-
-      &:not(.switch) {
-        width: 21px;
-
-        &:after {
-          opacity: var(--o, 0);
-        }
-
-        &:checked {
-          --o: 1;
-        }
-      }
-
+     
       & + label {
         font-size: 14px;
         color: var(--gray-100);
@@ -241,6 +115,7 @@
         height: 12px;
         background: var(--gray-600);
         transform: translateX(var(--x, 0));
+        
       }
 
       &:checked {
@@ -301,8 +176,18 @@
   }
 
   // Outline color variation
-  @include toggle-switch-outline("turquoise", --global-turquoise, "outline");
-  @include toggle-switch-outline("turquoise", --global-turquoise);
-  @include toggle-switch-outline("red", --global-red, "outline");
-  @include toggle-switch-outline("red", --global-red);
+  @include toggle-switch("turquoise", --global-turquoise, "outline");
+  @include toggle-switch("red", --global-red, "outline");
+  @include toggle-switch("yellow", --global-yellow, "outline");
+  @include toggle-switch("green", --global-green, "outline");
+  @include toggle-switch("blue", --global-blue, "outline");
+  @include toggle-switch("primary", --global-primary, "outline");
+
+  // Default color variation
+  @include toggle-switch("turquoise", --global-turquoise);
+  @include toggle-switch("red", --global-red);
+  @include toggle-switch("yellow", --global-yellow);
+  @include toggle-switch("green", --global-green);
+  @include toggle-switch("blue", --global-blue);
+  @include toggle-switch("primary", --global-primary);
 }

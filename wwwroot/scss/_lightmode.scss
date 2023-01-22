@@ -5,11 +5,16 @@
     --global-green: #27AE60FF;
     --global-yellow: #e2b93b;
     --global-blue: #2f80ed;
+    --global-primary: #000000; // black in light mode
+    --global-secondary: #ffffff; // white in light mode
     
     // Toggle-switch
     --toggle-switch-border: #e5e6e9;
     --toggle-switch-disabled: #e5e6e9;
     --toggle-switch-switch: #ffffff;
+    
+    // Radio-button
+    --radio-button-unchecked: var(--white-color);
     
     // Sidebar
     --sidebar-border-color: #E5E6E9;

@@ -41,45 +41,6 @@
 .uniqly .toggle-switch input[type=checkbox].outline:disabled:checked::after {
   background: var(--toggle-switch-disabled);
 }
-.uniqly .toggle-switch input[type=checkbox].outline.turquoise2 {
-  background-color: red;
-}
-.uniqly .toggle-switch input[type=checkbox].outline.secondary2:checked {
-  border: 1px solid var(--global-red);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.secondary2:checked::after {
-  background: var(--global-red);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.success:checked {
-  border: 1px solid var(--success-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.success:checked::after {
-  background: var(--success-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.danger:checked {
-  border: 1px solid var(--danger-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.danger:checked::after {
-  background: var(--danger-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.warning:checked {
-  border: 1px solid var(--warning-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.warning:checked::after {
-  background: var(--warning-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.info:checked {
-  border: 1px solid var(--info-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.info:checked::after {
-  background: var(--info-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.dark:checked {
-  border: 1px solid var(--dark-color);
-}
-.uniqly .toggle-switch input[type=checkbox].outline.dark:checked::after {
-  background: var(--dark-color);
-}
 .uniqly .toggle-switch input[type=checkbox]:after {
   content: "";
   display: block;
@@ -87,63 +48,10 @@
   top: 3px;
   right: 2px;
   position: absolute;
-  transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .uniqly .toggle-switch input[type=checkbox]:checked:after {
   background-color: var(--white-color);
-}
-.uniqly .toggle-switch input[type=checkbox].secondary:checked {
-  --b: var(--secondary-color);
-  --bc: var(--secondary-color);
-}
-.uniqly .toggle-switch input[type=checkbox].secondary2:checked {
-  --b: var(--secondary2-color);
-  --bc: var(--secondary2-color);
-}
-.uniqly .toggle-switch input[type=checkbox].success:checked {
-  --b: var(--success-color);
-  --bc: var(--success-color);
-}
-.uniqly .toggle-switch input[type=checkbox].danger:checked {
-  --b: var(--danger-color);
-  --bc: var(--danger-color);
-}
-.uniqly .toggle-switch input[type=checkbox].warning:checked {
-  --b: var(--warning-color);
-  --bc: var(--warning-color);
-}
-.uniqly .toggle-switch input[type=checkbox].info:checked {
-  --b: var(--info-color);
-  --bc: var(--info-color);
-}
-.uniqly .toggle-switch input[type=checkbox].dark:checked {
-  --b: var(--dark-color);
-  --bc: var(--dark-color);
-}
-.uniqly .toggle-switch input[type=checkbox]:disabled {
-  --b: var(--white-color);
-  cursor: not-allowed;
-  opacity: 0.9;
-}
-.uniqly .toggle-switch input[type=checkbox]:disabled:checked {
-  --b: var(--gray-400);
-  --bc: none;
-}
-.uniqly .toggle-switch input[type=checkbox]:disabled:checked::after {
-  top: 4px;
-}
-.uniqly .toggle-switch input[type=checkbox]:disabled + label {
-  cursor: not-allowed;
-  color: var(--gray-400);
-}
-.uniqly .toggle-switch input[type=checkbox]:not(.switch) {
-  width: 21px;
-}
-.uniqly .toggle-switch input[type=checkbox]:not(.switch):after {
-  opacity: var(--o, 0);
-}
-.uniqly .toggle-switch input[type=checkbox]:not(.switch):checked {
-  --o: 1;
 }
 .uniqly .toggle-switch input[type=checkbox] + label {
   font-size: 14px;
@@ -204,15 +112,48 @@
 .uniqly .toggle-switch.lg .switch:checked {
   --x: 24px;
 }
-.uniqly .toggle-switch.turquoise input[type=checkbox]:checked {
-  background: var(--global-turquoise);
-}
-.uniqly .toggle-switch.turquoise input[type=checkbox]:checked::after {
-  background: var(--toggle-switch-switch);
-}
-.uniqly turquoise.outline:checked {
+.uniqly .toggle-switch.turquoise.outline input[type=checkbox]:checked {
+  background: var(--global-secondary);
   border: 1px solid var(--global-turquoise);
 }
+.uniqly .toggle-switch.turquoise.outline input[type=checkbox]:checked::after {
+  background: var(--global-turquoise);
+}
+.uniqly .toggle-switch.red.outline input[type=checkbox]:checked {
+  background: var(--global-secondary);
+  border: 1px solid var(--global-red);
+}
+.uniqly .toggle-switch.red.outline input[type=checkbox]:checked::after {
+  background: var(--global-red);
+}
+.uniqly .toggle-switch.yellow.outline input[type=checkbox]:checked {
+  background: var(--global-secondary);
+  border: 1px solid var(--global-yellow);
+}
+.uniqly .toggle-switch.yellow.outline input[type=checkbox]:checked::after {
+  background: var(--global-yellow);
+}
+.uniqly .toggle-switch.green.outline input[type=checkbox]:checked {
+  background: var(--global-secondary);
+  border: 1px solid var(--global-green);
+}
+.uniqly .toggle-switch.green.outline input[type=checkbox]:checked::after {
+  background: var(--global-green);
+}
+.uniqly .toggle-switch.blue.outline input[type=checkbox]:checked {
+  background: var(--global-secondary);
+  border: 1px solid var(--global-blue);
+}
+.uniqly .toggle-switch.blue.outline input[type=checkbox]:checked::after {
+  background: var(--global-blue);
+}
+.uniqly .toggle-switch.primary.outline input[type=checkbox]:checked {
+  background: var(--global-secondary);
+  border: 1px solid var(--global-primary);
+}
+.uniqly .toggle-switch.primary.outline input[type=checkbox]:checked::after {
+  background: var(--global-primary);
+}
 .uniqly .toggle-switch.turquoise input[type=checkbox]:checked {
   background: var(--global-turquoise);
 }
@@ -225,14 +166,219 @@
 .uniqly .toggle-switch.red input[type=checkbox]:checked::after {
   background: var(--toggle-switch-switch);
 }
-.uniqly red.outline:checked {
-  border: 1px solid var(--global-red);
+.uniqly .toggle-switch.yellow input[type=checkbox]:checked {
+  background: var(--global-yellow);
 }
-.uniqly .toggle-switch.red input[type=checkbox]:checked {
-  background: var(--global-red);
-}
-.uniqly .toggle-switch.red input[type=checkbox]:checked::after {
+.uniqly .toggle-switch.yellow input[type=checkbox]:checked::after {
   background: var(--toggle-switch-switch);
+}
+.uniqly .toggle-switch.green input[type=checkbox]:checked {
+  background: var(--global-green);
+}
+.uniqly .toggle-switch.green input[type=checkbox]:checked::after {
+  background: var(--toggle-switch-switch);
+}
+.uniqly .toggle-switch.blue input[type=checkbox]:checked {
+  background: var(--global-blue);
+}
+.uniqly .toggle-switch.blue input[type=checkbox]:checked::after {
+  background: var(--toggle-switch-switch);
+}
+.uniqly .toggle-switch.primary input[type=checkbox]:checked {
+  background: var(--global-primary);
+}
+.uniqly .toggle-switch.primary input[type=checkbox]:checked::after {
+  background: var(--toggle-switch-switch);
+}
+
+.form-radio {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+.form-radio [type=radio]:checked,
+.form-radio [type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.form-radio [type=radio]:checked + label,
+.form-radio [type=radio]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: var(--gray-100);
+}
+.form-radio [type=radio]:disabled + label {
+  color: var(--gray-400);
+}
+.form-radio [type=radio]:checked + label:before,
+.form-radio [type=radio]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--gray-600);
+  border-radius: 100%;
+  background: var(--radio-button-unchecked);
+}
+.form-radio [type=radio]:checked + label::after {
+  opacity: 1;
+  transform: scale(1);
+}
+.form-radio [type=radio]:checked + label::after,
+.form-radio [type=radio]:not(:checked) + label::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--global-secondary);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 100%;
+  transition: all 0.2s ease;
+}
+.form-radio [type=radio]:disabled + label:before {
+  border: 1px solid var(--gray-600);
+  background-color: var(--global-secondary);
+}
+.form-radio [type=radio]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.form-radio [type=radio]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.form-radio .turquoise.outline[type=radio]:checked + label:before {
+  border: 3px solid var(--global-turquoise);
+  background-color: var(--global-secondary);
+}
+.form-radio .turquoise.outline[type=radio]:checked + label:after,
+.form-radio .turquoise.outline[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--global-turquoise);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.form-radio .red.outline[type=radio]:checked + label:before {
+  border: 3px solid var(--global-red);
+  background-color: var(--global-secondary);
+}
+.form-radio .red.outline[type=radio]:checked + label:after,
+.form-radio .red.outline[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--global-red);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.form-radio .yellow.outline[type=radio]:checked + label:before {
+  border: 3px solid var(--global-yellow);
+  background-color: var(--global-secondary);
+}
+.form-radio .yellow.outline[type=radio]:checked + label:after,
+.form-radio .yellow.outline[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--global-yellow);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.form-radio .green.outline[type=radio]:checked + label:before {
+  border: 3px solid var(--global-green);
+  background-color: var(--global-secondary);
+}
+.form-radio .green.outline[type=radio]:checked + label:after,
+.form-radio .green.outline[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--global-green);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.form-radio .blue.outline[type=radio]:checked + label:before {
+  border: 3px solid var(--global-blue);
+  background-color: var(--global-secondary);
+}
+.form-radio .blue.outline[type=radio]:checked + label:after,
+.form-radio .blue.outline[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--global-blue);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.form-radio .primary.outline[type=radio]:checked + label:before {
+  border: 3px solid var(--global-primary);
+  background-color: var(--global-secondary);
+}
+.form-radio .primary.outline[type=radio]:checked + label:after,
+.form-radio .primary.outline[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--global-primary);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.form-radio .turquoise:not(.outline)[type=radio]:checked + label:before {
+  border: none;
+  background-color: var(--global-turquoise);
+}
+.form-radio .red:not(.outline)[type=radio]:checked + label:before {
+  border: none;
+  background-color: var(--global-red);
+}
+.form-radio .yellow:not(.outline)[type=radio]:checked + label:before {
+  border: none;
+  background-color: var(--global-yellow);
+}
+.form-radio .green:not(.outline)[type=radio]:checked + label:before {
+  border: none;
+  background-color: var(--global-green);
+}
+.form-radio .blue:not(.outline)[type=radio]:checked + label:before {
+  border: none;
+  background-color: var(--global-blue);
+}
+.form-radio .primary:not(.outline)[type=radio]:checked + label:before {
+  border: none;
+  background-color: var(--global-primary);
 }
 
 .uniqly {
@@ -407,149 +553,6 @@
 .uniqly .form-check .check-input.outline:disabled + .check-label:after {
   box-shadow: 2px 0 0 var(--gray-400), 4px 0 0 var(--gray-400), 4px -2px 0 var(--gray-400), 4px -4px 0 var(--gray-400), 4px -6px 0 var(--gray-400), 4px -8px 0 var(--gray-400);
   background: var(--gray-400);
-}
-.uniqly .form-radio {
-  margin-top: 7px;
-  margin-bottom: 7px;
-}
-.uniqly .form-radio [type=radio]:checked,
-.uniqly .form-radio [type=radio]:not(:checked) {
-  position: absolute;
-  left: -9999px;
-}
-.uniqly .form-radio [type=radio]:checked + label,
-.uniqly .form-radio [type=radio]:not(:checked) + label {
-  position: relative;
-  padding-left: 28px;
-  cursor: pointer;
-  line-height: 20px;
-  display: inline-block;
-  color: var(--gray-100);
-}
-.uniqly .form-radio [type=radio]:disabled + label {
-  color: var(--gray-400);
-}
-.uniqly .form-radio [type=radio]:checked + label:before,
-.uniqly .form-radio [type=radio]:not(:checked) + label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--gray-600);
-  border-radius: 100%;
-  background: #fff;
-}
-.uniqly .form-radio [type=radio]:checked + label:before {
-  border: none;
-  background-color: var(--dark-color);
-}
-.uniqly .form-radio .secondary[type=radio]:checked + label:before {
-  border: none;
-  background-color: var(--secondary-color);
-}
-.uniqly .form-radio .secondary2[type=radio]:checked + label:before {
-  border: none;
-  background-color: var(--secondary2-color);
-}
-.uniqly .form-radio .success[type=radio]:checked + label:before {
-  border: none;
-  background-color: var(--success-color);
-}
-.uniqly .form-radio .warning[type=radio]:checked + label:before {
-  border: none;
-  background-color: var(--warning-color);
-}
-.uniqly .form-radio .danger[type=radio]:checked + label:before {
-  border: none;
-  background-color: var(--danger-color);
-}
-.uniqly .form-radio .info[type=radio]:checked + label:before {
-  border: none;
-  background-color: var(--info-color);
-}
-.uniqly .form-radio .dark[type=radio]:checked + label:before {
-  border: none;
-  background-color: var(--dark-color);
-}
-.uniqly .form-radio [type=radio]:disabled + label:before {
-  border: 1px solid var(--gray-600);
-  background-color: var(--white-color);
-}
-.uniqly .form-radio .outline[type=radio]:checked + label:before {
-  border: 3px solid var(--primary-color);
-  background: #fff;
-  width: 20px;
-  height: 20px;
-}
-.uniqly .form-radio .secondary.outline[type=radio]:checked + label:before {
-  border: 3px solid var(--secondary-color);
-}
-.uniqly .form-radio .secondary2.outline[type=radio]:checked + label:before {
-  border: 3px solid var(--secondary2-color);
-}
-.uniqly .form-radio .success.outline[type=radio]:checked + label:before {
-  border: 3px solid var(--success-color);
-}
-.uniqly .form-radio .warning.outline[type=radio]:checked + label:before {
-  border: 3px solid var(--warning-color);
-}
-.uniqly .form-radio .danger.danger.outline[type=radio]:checked + label:before {
-  border: 3px solid var(--danger-color);
-}
-.uniqly .form-radio .info.outline[type=radio]:checked + label:before {
-  border: 3px solid var(--info-color);
-}
-.uniqly .form-radio .dark.outline[type=radio]:checked + label:before {
-  border: 3px solid var(--dark-color);
-}
-.uniqly .form-radio [type=radio]:checked + label:after,
-.uniqly .form-radio [type=radio]:not(:checked) + label:after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background: var(--white-color);
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  border-radius: 100%;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-.uniqly .form-radio .outline[type=radio]:checked + label:after {
-  background: var(--primary-color);
-}
-.uniqly .form-radio .secondary.outline[type=radio]:checked + label::after {
-  background: var(--secondary-color);
-}
-.uniqly .form-radio .secondary2.outline[type=radio]:checked + label::after {
-  background: var(--secondary2-color);
-}
-.uniqly .form-radio .success.outline[type=radio]:checked + label::after {
-  background: var(--success-color);
-}
-.uniqly .form-radio .warning.outline[type=radio]:checked + label::after {
-  background: var(--warning-color);
-}
-.uniqly .form-radio .danger.danger.outline[type=radio]:checked + label::after {
-  background: var(--danger-color);
-}
-.uniqly .form-radio .info.outline[type=radio]:checked + label::after {
-  background: var(--info-color);
-}
-.uniqly .form-radio .dark.outline[type=radio]:checked + label::after {
-  background: var(--dark-color);
-}
-.uniqly .form-radio [type=radio]:not(:checked) + label:after {
-  opacity: 0;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-}
-.uniqly .form-radio [type=radio]:checked + label:after {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
 }
 .uniqly .custom-input-field {
   margin-bottom: 30px;

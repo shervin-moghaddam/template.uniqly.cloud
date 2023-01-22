@@ -1,78 +1,77 @@
 <div style="padding: 2rem 2rem 0 2rem">
     <div class="toggle-switch">
         <input id="color-theme-changer" type="checkbox" class="switch" onchange="changeTheme()"/>
-        <label for="color-theme-changer">Dark  mode</label>
+        <label for="color-theme-changer">Dark mode</label>
     </div>
 </div>
 
-
 <div style="padding: 2rem 2rem 0 2rem">
-    
     <div class="toggle-switch red">
-        <input id="st1" type="checkbox" class="switch"/>
-        <label for="ts1">Default switch input</label>
+        <input id="ts6" type="checkbox" class="switch" checked/>
+        <label class="ts6" for="s2d">medium size switch</label>
     </div>
     
-    <!-- outline -->
-    <div class="toggle-switch">
+    <div class="toggle-switch green outline">
         <input id="ts5" type="checkbox" class="switch outline" checked/>
         <label for="ts5">Outline Switch Default </label>
     </div>
-    <!-- medium size -->
-    <div class="toggle-switch md">
-        <input id="s2d" type="checkbox" class="switch" checked/>
-        <label class="s2d" for="s2d">medium size switch</label>
+
+    <div class="toggle-switch yellow md">
+        <input id="ts6" type="checkbox" class="switch" checked/>
+        <label class="ts6" for="s2d">medium size switch</label>
     </div>
-    <!-- large size -->
+
     <div class="toggle-switch turquoise lg">
-        <input id="s2d" type="checkbox" class="switch" checked/>
-        <label class="s2d" for="s2d">Large size switch</label>
+        <input id="ts7" type="checkbox" class="switch" checked/>
+        <label class="ts7" for="s2d">Large size switch</label>
+    </div>
+</div>
+
+@* RADIO BUTTONS *@
+<div style="padding: 2rem 2rem 0 2rem">
+     <div class="form-radio ">
+            <input type="radio" id="radio-3" name="radio-group-1" disabled/>
+            <label for="radio-3">Disabled Radio</label>
+        </div>
+    <div class="form-radio">
+        <input type="radio" class="red" id="radio-11" name="radio-group-2"/>
+        <label for="radio-11">Radio Primary</label>
+    </div>
+    <!--  Radio Secondary-->
+    <div class="form-radio">
+        <input
+            type="radio"
+            class="green"
+            id="radio-12"
+            name="radio-group-2" checked/>
+        <label for="radio-12">Radio Secondary</label>
     </div>
 </div>
 
 <div style="padding: 2rem 2rem 0 2rem">
-    <!-- primary color -->
-    <div class="toggle-switch">
-        <input id="s2d" type="checkbox" class="switch" checked/>
-        <label for="s2d">Switch primary</label>
+    <div class="form-radio">
+        <input type="radio" class="primary outline" id="radio-21" name="radio-group"/>
+        <label for="radio-21">Outline Radio Primary</label>
     </div>
-    <!-- secondary color -->
-    <div class="toggle-switch">
-        <input id="s2d" type="checkbox" class="switch secondary" checked/>
-        <label for="s2d">Switch secondary</label>
+    <!--  Radio Secondary-->
+    <div class="form-radio">
+        <input checked
+            type="radio"
+            class="yellow outline"
+            id="radio-22"
+            name="radio-group"/>
+        <label for="radio-22">Outline Radio Secondary</label>
     </div>
-    <!-- secondary2 color -->
-    <div class="toggle-switch">
-        <input id="s2d" type="checkbox" class="switch secondary2" checked/>
-        <label for="s2d">Switch secondary2</label>
-    </div>
-    <!-- success color -->
-    <div class="toggle-switch">
-        <input id="s2d" type="checkbox" class="switch success" checked/>
-        <label for="s2d">Switch secondary2</label>
-    </div>
-    <!-- danger color -->
-    <div class="toggle-switch">
-        <input id="s2d" type="checkbox" class="switch danger" checked/>
-        <label for="s2d">Switch danger</label>
-    </div>
-    <!-- warning color -->
-    <div class="toggle-switch">
-        <input id="s2d" type="checkbox" class="switch warning" checked/>
-        <label for="s2d">Switch warning</label>
-    </div>
-    <!-- info color -->
-    <div class="toggle-switch">
-        <input id="s2d" type="checkbox" class="switch info" checked/>
-        <label for="s2d">Switch info</label>
-    </div>
-    <!-- dark color -->
-    <div class="toggle-switch">
-        <input id="s2d" type="checkbox" class="switch dark" checked/>
-        <label for="s2d">Switch dark</label>
+    <!--  Radio Secondary2-->
+    <div class="form-radio">
+        <input
+            type="radio"
+            class="blue outline"
+            id="radio-23"
+            name="radio-group"/>
+        <label for="radio-23">Outline Radio Secondary 02</label>
     </div>
 </div>
-
 
 <script>
  let trans = () => {
