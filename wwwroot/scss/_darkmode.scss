@@ -11,6 +11,7 @@ html[color-theme="dark"] {
     // Toggle-switch
     --toggle-switch-border: #e5e6e9;
     --toggle-switch-disabled: #e5e6e9;
+    --toggle-switch-switch: #ffffff;
 
     // Radio-button
     --radio-button-unchecked: #3c3c3c;
@@ -24,6 +25,7 @@ html[color-theme="dark"] {
     --sidebar-navitem-text-active: var(--global-turquoise);
     --sidebar-divider-text: #696974;
     --sidebar-divider: var(--sidebar-border-color);
+    --sidebar-badge-bg-red: #ec6432;
     --topbar-search-bg: #13131A;
     --topbar-text: #696974;
     --topbar-search-text: var(--topbar-text);

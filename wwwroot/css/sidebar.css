@@ -145,6 +145,7 @@ html[color-theme=dark] {
   --global-secondary: #000000;
   --toggle-switch-border: #e5e6e9;
   --toggle-switch-disabled: #e5e6e9;
+  --toggle-switch-switch: #ffffff;
   --radio-button-unchecked: #3c3c3c;
   --sidebar-border-color: #292932;
   --sidebar-navitem-hover: #292932FF;
@@ -154,6 +155,7 @@ html[color-theme=dark] {
   --sidebar-navitem-text-active: var(--global-turquoise);
   --sidebar-divider-text: #696974;
   --sidebar-divider: var(--sidebar-border-color);
+  --sidebar-badge-bg-red: #ec6432;
   --topbar-search-bg: #13131A;
   --topbar-text: #696974;
   --topbar-search-text: var(--topbar-text);
@@ -177,7 +179,7 @@ html[color-theme=dark] {
 }
 
 :root {
-  --global-turquoise: #3AAFC3;
+  --global-turquoise: rgb(58, 175, 195);
   --global-red: #EB5757FF;
   --global-green: #27AE60FF;
   --global-yellow: #e2b93b;
@@ -613,26 +615,6 @@ html {
   background-color: var(--global-primary);
 }
 
-.uniqly {
-  /*style the arrow inside the select element:*/
-  /*point the arrow upwards when the select box is open (active):*/
-  /*style the items (options), including the selected item:*/
-  /*style items (options):*/
-  /*hide the items when the select box is closed:*/
-}
-.uniqly .heading {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  margin: 0;
-}
-.uniqly .input-title {
-  margin-top: 25px;
-  width: 100%;
-  max-width: 200px;
-  font-weight: 600;
-  padding-bottom: 10px;
-}
 .uniqly .form-check {
   height: 20px;
   margin-top: 7px;
@@ -669,59 +651,6 @@ html {
 .uniqly .form-check .check-input:checked + .check-label:before {
   background: var(--gray-100);
 }
-.uniqly .form-check .check-input.secondary:checked + .check-label:before {
-  background: var(--secondary-color);
-}
-.uniqly .form-check .check-input.secondary2:checked + .check-label:before {
-  background: var(--secondary2-color);
-}
-.uniqly .form-check .check-input.success:checked + .check-label:before {
-  background: var(--success-color);
-}
-.uniqly .form-check .check-input.warning:checked + .check-label:before {
-  background: var(--warning-color);
-}
-.uniqly .form-check .check-input.danger:checked + .check-label:before {
-  background: var(--danger-color);
-}
-.uniqly .form-check .check-input.info:checked + .check-label:before {
-  background: var(--info-color);
-}
-.uniqly .form-check .check-input.dark:checked + .check-label:before {
-  background: var(--dark-color);
-}
-.uniqly .form-check .check-input.outline:checked + .check-label:before {
-  background: none;
-  border: 1px solid var(--gray-100);
-}
-.uniqly .form-check .check-input.outline.secondary:checked + .check-label:before {
-  background: none;
-  border: 1px solid var(--secondary-color);
-}
-.uniqly .form-check .check-input.outline.secondary2:checked + .check-label:before {
-  background: none;
-  border: 1px solid var(--secondary2-color);
-}
-.uniqly .form-check .check-input.outline.success:checked + .check-label:before {
-  background: none;
-  border: 1px solid var(--success-color);
-}
-.uniqly .form-check .check-input.outline.warning:checked + .check-label:before {
-  background: none;
-  border: 1px solid var(--warning-color);
-}
-.uniqly .form-check .check-input.outline.danger:checked + .check-label:before {
-  background: none;
-  border: 1px solid var(--danger-color);
-}
-.uniqly .form-check .check-input.outline.info:checked + .check-label:before {
-  background: none;
-  border: 1px solid var(--info-color);
-}
-.uniqly .form-check .check-input.outline.dark:checked + .check-label:before {
-  background: none;
-  border: 1px solid var(--dark-color);
-}
 .uniqly .form-check .check-input:disabled + .check-label {
   color: var(--gray-400);
   cursor: auto;
@@ -746,45 +675,124 @@ html {
   top: 7px;
   width: 2px;
   height: 2px;
-  box-shadow: 2px 0 0 var(--white-color), 4px 0 0 var(--white-color), 4px -2px 0 var(--white-color), 4px -4px 0 var(--white-color), 4px -6px 0 var(--white-color), 4px -8px 0 var(--white-color);
-  background: var(--white-color);
+  box-shadow: 2px 0 0 var(--global-primary), 4px 0 0 var(--global-primary), 4px -2px 0 var(--global-primary), 4px -4px 0 var(--global-primary), 4px -6px 0 var(--global-primary), 4px -8px 0 var(--global-primary);
+  background: var(--global-primary);
   transform: rotate(45deg);
 }
-.uniqly .form-check .check-input.outline:checked + .check-label:after {
-  box-shadow: 2px 0 0 var(--gray-100), 4px 0 0 var(--gray-100), 4px -2px 0 var(--gray-100), 4px -4px 0 var(--gray-100), 4px -6px 0 var(--gray-100), 4px -8px 0 var(--gray-100);
-  background: var(--gray-100);
-}
-.uniqly .form-check .check-input.outline.secondary:checked + .check-label:after {
-  box-shadow: 2px 0 0 var(--secondary-color), 4px 0 0 var(--secondary-color), 4px -2px 0 var(--secondary-color), 4px -4px 0 var(--secondary-color), 4px -6px 0 var(--secondary-color), 4px -8px 0 var(--secondary-color);
-  background: var(--secondary-color);
-}
-.uniqly .form-check .check-input.outline.secondary2:checked + .check-label:after {
-  box-shadow: 2px 0 0 var(--secondary2-color), 4px 0 0 var(--secondary2-color), 4px -2px 0 var(--secondary2-color), 4px -4px 0 var(--secondary2-color), 4px -6px 0 var(--secondary2-color), 4px -8px 0 var(--secondary2-color);
-  background: var(--secondary2-color);
-}
-.uniqly .form-check .check-input.outline.success:checked + .check-label:after {
-  box-shadow: 2px 0 0 var(--success-color), 4px 0 0 var(--success-color), 4px -2px 0 var(--success-color), 4px -4px 0 var(--success-color), 4px -6px 0 var(--success-color), 4px -8px 0 var(--success-color);
-  background: var(--success-color);
-}
-.uniqly .form-check .check-input.outline.warning:checked + .check-label:after {
-  box-shadow: 2px 0 0 var(--warning-color), 4px 0 0 var(--warning-color), 4px -2px 0 var(--warning-color), 4px -4px 0 var(--warning-color), 4px -6px 0 var(--warning-color), 4px -8px 0 var(--warning-color);
-  background: var(--warning-color);
-}
-.uniqly .form-check .check-input.outline.danger:checked + .check-label:after {
-  box-shadow: 2px 0 0 var(--danger-color), 4px 0 0 var(--danger-color), 4px -2px 0 var(--danger-color), 4px -4px 0 var(--danger-color), 4px -6px 0 var(--danger-color), 4px -8px 0 var(--danger-color);
-  background: var(--danger-color);
-}
-.uniqly .form-check .check-input.outline.info:checked + .check-label:after {
-  box-shadow: 2px 0 0 var(--info-color), 4px 0 0 var(--info-color), 4px -2px 0 var(--info-color), 4px -4px 0 var(--info-color), 4px -6px 0 var(--info-color), 4px -8px 0 var(--info-color);
-  background: var(--info-color);
-}
-.uniqly .form-check .check-input.outline.dark:checked + .check-label:after {
-  box-shadow: 2px 0 0 var(--dark-color), 4px 0 0 var(--dark-color), 4px -2px 0 var(--dark-color), 4px -4px 0 var(--dark-color), 4px -6px 0 var(--dark-color), 4px -8px 0 var(--dark-color);
-  background: var(--dark-color);
-}
 .uniqly .form-check .check-input.outline:disabled + .check-label:after {
-  box-shadow: 2px 0 0 var(--gray-400), 4px 0 0 var(--gray-400), 4px -2px 0 var(--gray-400), 4px -4px 0 var(--gray-400), 4px -6px 0 var(--gray-400), 4px -8px 0 var(--gray-400);
-  background: var(--gray-400);
+  box-shadow: 2px 0 0 var(--global-secondary), 4px 0 0 var(--global-secondary), 4px -2px 0 var(--global-secondary), 4px -4px 0 var(--global-secondary), 4px -6px 0 var(--global-secondary), 4px -8px 0 var(--global-secondary);
+  background: var(--global-secondary);
+}
+.uniqly .form-check .check-input.outline:checked + .check-label:before {
+  background: none;
+  border: 1px solid var(--global-turquoise);
+}
+.uniqly .form-check .check-input.outline:checked + .check-label:before {
+  background: none;
+  border: 1px solid var(--global-red);
+}
+.uniqly .form-check .check-input.outline:checked + .check-label:before {
+  background: none;
+  border: 1px solid var(--global-yellow);
+}
+.uniqly .form-check .check-input.outline:checked + .check-label:before {
+  background: none;
+  border: 1px solid var(--global-green);
+}
+.uniqly .form-check .check-input.outline:checked + .check-label:before {
+  background: none;
+  border: 1px solid var(--global-blue);
+}
+.uniqly .form-check .check-input.outline:checked + .check-label:before {
+  background: none;
+  border: 1px solid var(--global-primary);
+}
+.uniqly .form-check .check-input.turquoise:checked + .check-label:before {
+  background: var(--global-turquoise);
+}
+.uniqly .form-check .check-input.red:checked + .check-label:before {
+  background: var(--global-red);
+}
+.uniqly .form-check .check-input.yellow:checked + .check-label:before {
+  background: var(--global-yellow);
+}
+.uniqly .form-check .check-input.green:checked + .check-label:before {
+  background: var(--global-green);
+}
+.uniqly .form-check .check-input.blue:checked + .check-label:before {
+  background: var(--global-blue);
+}
+.uniqly .form-check .check-input.primary:checked + .check-label:before {
+  background: var(--global-primary);
+}
+
+.uniqly {
+  /*style the arrow inside the select element:*/
+  /*point the arrow upwards when the select box is open (active):*/
+  /*style the items (options), including the selected item:*/
+  /*style items (options):*/
+  /*hide the items when the select box is closed:*/
+}
+.uniqly .tab-nav-wrapper .tab-nav {
+  border-bottom: 1px solid var(--toggle-switch-border);
+  width: fit-content;
+  font-size: 14px;
+}
+.uniqly .tab-nav-wrapper .tab-nav nav {
+  width: 20%;
+  margin: auto;
+  height: 30px;
+  display: inline-grid;
+}
+.uniqly .tab-nav-wrapper .tab-nav nav.col-2 {
+  grid-template-columns: repeat(2, minmax(100px, min-content));
+}
+.uniqly .tab-nav-wrapper .tab-nav nav.col-3 {
+  grid-template-columns: repeat(3, minmax(100px, min-content));
+}
+.uniqly .tab-nav-wrapper .tab-nav nav.col-4 {
+  grid-template-columns: repeat(4, minmax(100px, min-content));
+}
+.uniqly .tab-nav-wrapper .tab-nav nav.col-5 {
+  grid-template-columns: repeat(5, minmax(100px, min-content));
+}
+.uniqly .tab-nav-wrapper .tab-nav nav.col-6 {
+  grid-template-columns: repeat(6, minmax(100px, min-content));
+}
+.uniqly .tab-nav-wrapper .tab-nav nav.col-7 {
+  grid-template-columns: repeat(7, minmax(100px, min-content));
+}
+.uniqly .tab-nav-wrapper .tab-nav nav.col-8 {
+  grid-template-columns: repeat(8, minmax(100px, min-content));
+}
+.uniqly .tab-nav-wrapper .tab-nav nav a {
+  transition: color 0.15s ease-in-out, border-color 0.1s linear;
+  text-decoration: none;
+  margin-right: 20px;
+  text-align: center;
+  color: var(--global-primary);
+  border-bottom: 4px solid rgba(58, 175, 195, 0);
+}
+.uniqly .tab-nav-wrapper .tab-nav nav a:hover {
+  color: var(--global-turquoise);
+  cursor: pointer;
+}
+.uniqly .tab-nav-wrapper .tab-nav nav a.active {
+  color: var(--global-turquoise);
+  border-bottom: 4px solid rgb(58, 175, 195);
+}
+.uniqly .heading {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+.uniqly .input-title {
+  margin-top: 25px;
+  width: 100%;
+  max-width: 200px;
+  font-weight: 600;
+  padding-bottom: 10px;
 }
 .uniqly .custom-input-field {
   margin-bottom: 30px;
@@ -1833,6 +1841,7 @@ body {
 .uniqly .main-wrapper .main-body .content-body {
   width: 100%;
   height: 94vh;
+  display: block;
   background-color: var(--background-color);
   overflow-y: scroll;
 }

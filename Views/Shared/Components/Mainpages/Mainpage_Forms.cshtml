@@ -1,3 +1,14 @@
+<div style="height:20px"></div>
+<div class="tab-nav-wrapper">
+    <div class="tab-nav">
+        <nav class="col-4">
+            <a class="active">Tab One</a>
+            <a>Tab Two</a>
+            <a>Tab Three</a>
+            <a>Tab Four</a>
+        </nav>
+    </div>
+</div>
 <div style="padding: 2rem 2rem 0 2rem">
     <div class="toggle-switch">
         <input id="color-theme-changer" type="checkbox" class="switch" onchange="changeTheme()"/>
@@ -5,12 +16,14 @@
     </div>
 </div>
 
+
+@* TOGGLE SWITCHES *@
 <div style="padding: 2rem 2rem 0 2rem">
     <div class="toggle-switch red">
         <input id="ts6" type="checkbox" class="switch" checked/>
         <label class="ts6" for="s2d">medium size switch</label>
     </div>
-    
+
     <div class="toggle-switch green outline">
         <input id="ts5" type="checkbox" class="switch outline" checked/>
         <label for="ts5">Outline Switch Default </label>
@@ -29,10 +42,10 @@
 
 @* RADIO BUTTONS *@
 <div style="padding: 2rem 2rem 0 2rem">
-     <div class="form-radio ">
-            <input type="radio" id="radio-3" name="radio-group-1" disabled/>
-            <label for="radio-3">Disabled Radio</label>
-        </div>
+    <div class="form-radio ">
+        <input type="radio" id="radio-3" name="radio-group-1" disabled/>
+        <label for="radio-3">Disabled Radio</label>
+    </div>
     <div class="form-radio">
         <input type="radio" class="red" id="radio-11" name="radio-group-2"/>
         <label for="radio-11">Radio Primary</label>
@@ -56,10 +69,10 @@
     <!--  Radio Secondary-->
     <div class="form-radio">
         <input checked
-            type="radio"
-            class="yellow outline"
-            id="radio-22"
-            name="radio-group"/>
+               type="radio"
+               class="yellow outline"
+               id="radio-22"
+               name="radio-group"/>
         <label for="radio-22">Outline Radio Secondary</label>
     </div>
     <!--  Radio Secondary2-->
@@ -73,6 +86,64 @@
     </div>
 </div>
 
+@* CHECKBOX *@
+<div style="padding: 2rem 2rem 0 2rem">
+    <!-- Checkbox  -->
+    <div class="form-check">
+        <input
+            class="check-input red"
+            id="checkbox-1"
+            type="checkbox"
+            value="value1"/>
+        <label class="check-label" for="checkbox-1">Default checkbox</label>
+    </div>
+    <!-- Checkbox  checked -->
+    <div class="form-check primary">
+        <input
+            class="check-input"
+            id="checkbox-2"
+            type="checkbox"
+            value="value1"
+            checked/>
+        <label class="check-label" for="checkbox-2">Checked checkbox</label>
+    </div>
+    <!-- Checkbox  disabled-->
+    <div class="form-check">
+        <input
+            class="check-input only-disabled"
+            id="checkbox-3"
+            type="checkbox"
+            value="value1"
+            disabled/>
+        <label class="check-label" for="checkbox-3">Disabled checkbox</label>
+    </div>
+    <!-- Checkbox  disabled-->
+    <div class="form-check">
+        <input
+            class="check-input"
+            id="checkbox-4"
+            type="checkbox"
+            value="value1"
+            disabled
+            checked/>
+        <label class="check-label" for="checkbox-4">
+            Disabled checked checkbox
+        </label
+        >
+    </div>
+    <!-- outline -->
+    <div class="form-check">
+        <input
+            class="check-input outline"
+            id="checkbox-7"
+            type="checkbox"
+            value="value1"
+            checked/>
+        <label class="check-label" for="checkbox-7">Outline Checkbox</label>
+    </div>
+</div>
+
+
 <script>
  let trans = () => {
         document.documentElement.classList.add('transition');
@@ -80,6 +151,13 @@
             document.documentElement.classList.remove('transition');
         }, 1000)
     }
+
+    $('.tab-nav').each(function() {
+        $(this).on('click', 'a', function(e){
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    });
+    
 function changeTheme() {
      
     let chkbox = document.getElementById('color-theme-changer');

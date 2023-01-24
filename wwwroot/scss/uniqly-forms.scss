@@ -1,14 +1,64 @@
 @import "wwwroot/scss/libs/include-media";
 @import "wwwroot/scss/uniqly-forms/toggle-switch";
 @import "wwwroot/scss/uniqly-forms/radio-button";
-// Mixin
-@mixin checked-color($color) {
-  box-shadow: 2px 0 0 $color, 4px 0 0 $color, 4px -2px 0 $color,
-  4px -4px 0 $color, 4px -6px 0 $color, 4px -8px 0 $color;
-  background: $color;
-}
+@import "wwwroot/scss/uniqly-forms/check-box";
 
 .uniqly {
+  .tab-nav-wrapper {
+    .tab-nav {
+      border-bottom: 1px solid var(--toggle-switch-border);
+      width: fit-content;
+      font-size: 14px;
+
+      & nav {
+        width: 20%;
+        margin: auto;
+        height: 30px;
+        display: inline-grid;
+        
+        &.col-2 {
+          grid-template-columns: repeat(2, minmax(100px, min-content));
+        }
+        &.col-3 {
+          grid-template-columns: repeat(3, minmax(100px, min-content));
+        }
+        &.col-4 {
+          grid-template-columns: repeat(4, minmax(100px, min-content));
+        }
+        &.col-5 {
+          grid-template-columns: repeat(5, minmax(100px, min-content));
+        }
+        &.col-6 {
+          grid-template-columns: repeat(6, minmax(100px, min-content));
+        }
+        &.col-7 {
+          grid-template-columns: repeat(7, minmax(100px, min-content));
+        }
+        &.col-8 {
+          grid-template-columns: repeat(8, minmax(100px, min-content));
+        }
+
+        & a {
+          transition: color .15s ease-in-out, border-color .1s linear;
+          text-decoration: none;
+          margin-right: 20px;
+          text-align: center;
+          color: var(--global-primary);
+
+          &:hover {
+            color: var(--global-turquoise);
+            cursor: pointer;
+          }
+          border-bottom: 4px solid rgba(58, 175, 195, 0);
+          &.active {
+            color: var(--global-turquoise);
+            border-bottom: 4px solid rgba(58, 175, 195, 1);
+          }
+        }
+      }
+    }
+  }
+
   .heading {
     font-weight: 400;
     font-size: 14px;
@@ -23,194 +73,6 @@
     font-weight: 600;
     padding-bottom: 10px;
   }
-
-  .form-check {
-    height: 20px;
-    margin-top: 7px;
-    margin-bottom: 7px;
-    position: relative;
-    font-size: 14px;
-
-    .check-input {
-      margin: 20px 0;
-      position: absolute;
-      opacity: 0;
-      font-size: 14px;
-
-      & + .check-label {
-        color: var(--gray-100);
-        position: relative;
-        left: 29px;
-        cursor: pointer;
-      }
-
-      // Box.
-      & + .check-label:before {
-        content: "";
-        margin-right: 10px;
-        display: inline-block;
-        vertical-align: text-top;
-        width: 20px;
-        height: 20px;
-        border: 1px solid #e5e6e9;
-        border-radius: 4px;
-        background: #ffffff;
-        position: absolute;
-        top: -2px;
-        left: -29px;
-      }
-
-      // !Box checked color
-      &:checked + .check-label:before {
-        background: var(--gray-100);
-      }
-
-      &.secondary:checked + .check-label:before {
-        background: var(--secondary-color);
-      }
-
-      &.secondary2:checked + .check-label:before {
-        background: var(--secondary2-color);
-      }
-
-      &.success:checked + .check-label:before {
-        background: var(--success-color);
-      }
-
-      &.warning:checked + .check-label:before {
-        background: var(--warning-color);
-      }
-
-      &.danger:checked + .check-label:before {
-        background: var(--danger-color);
-      }
-
-      &.info:checked + .check-label:before {
-        background: var(--info-color);
-      }
-
-      &.dark:checked + .check-label:before {
-        background: var(--dark-color);
-      }
-
-      // outline border
-      &.outline:checked + .check-label:before {
-        background: none;
-        border: 1px solid var(--gray-100);
-      }
-
-      &.outline.secondary:checked + .check-label:before {
-        background: none;
-        border: 1px solid var(--secondary-color);
-      }
-
-      &.outline.secondary2:checked + .check-label:before {
-        background: none;
-        border: 1px solid var(--secondary2-color);
-      }
-
-      &.outline.success:checked + .check-label:before {
-        background: none;
-        border: 1px solid var(--success-color);
-      }
-
-      &.outline.warning:checked + .check-label:before {
-        background: none;
-        border: 1px solid var(--warning-color);
-      }
-
-      &.outline.danger:checked + .check-label:before {
-        background: none;
-        border: 1px solid var(--danger-color);
-      }
-
-      &.outline.info:checked + .check-label:before {
-        background: none;
-        border: 1px solid var(--info-color);
-      }
-
-      &.outline.dark:checked + .check-label:before {
-        background: none;
-        border: 1px solid var(--dark-color);
-      }
-
-      // Disabled state .check-label.
-      &:disabled + .check-label {
-        color: var(--gray-400);
-        cursor: auto;
-      }
-
-      // Disabled box.
-      &.only-disabled:disabled + .check-label:before {
-        box-shadow: none;
-        background: none;
-      }
-
-      &:disabled + .check-label:before {
-        box-shadow: none;
-        background: var(--gray-400);
-      }
-
-      //   outline border
-      &.outline:disabled + .check-label:before {
-        box-shadow: none;
-        background: none;
-        border: 1px solid var(--gray-400);
-      }
-
-      // Checkmark. Could be replaced with an image
-      &:checked + .check-label:after {
-        content: "";
-        position: absolute;
-        left: -24px;
-        top: 7px;
-        width: 2px;
-        height: 2px;
-        @include checked-color($color: var(--white-color));
-        transform: rotate(45deg);
-      }
-
-      // out line checked color
-
-      &.outline:checked + .check-label:after {
-        @include checked-color($color: var(--gray-100));
-      }
-
-      &.outline.secondary:checked + .check-label:after {
-        @include checked-color($color: var(--secondary-color));
-      }
-
-      &.outline.secondary2:checked + .check-label:after {
-        @include checked-color($color: var(--secondary2-color));
-      }
-
-      &.outline.success:checked + .check-label:after {
-        @include checked-color($color: var(--success-color));
-      }
-
-      &.outline.warning:checked + .check-label:after {
-        @include checked-color($color: var(--warning-color));
-      }
-
-      &.outline.danger:checked + .check-label:after {
-        @include checked-color($color: var(--danger-color));
-      }
-
-      &.outline.info:checked + .check-label:after {
-        @include checked-color($color: var(--info-color));
-      }
-
-      &.outline.dark:checked + .check-label:after {
-        @include checked-color($color: var(--dark-color));
-      }
-
-      //   disabled checked color
-      &.outline:disabled + .check-label:after {
-        @include checked-color($color: var(--gray-400));
-      }
-    }
-  }
-
 
 
   // Input Fields

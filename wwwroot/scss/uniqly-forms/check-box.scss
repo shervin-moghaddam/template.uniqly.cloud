@@ -1,0 +1,121 @@
+@mixin checked-color($color-var) {
+  // The check mark inside the square
+  box-shadow: 2px 0 0 var($color-var), 4px 0 0 var($color-var), 4px -2px 0 var($color-var),
+  4px -4px 0 var($color-var), 4px -6px 0 var($color-var), 4px -8px 0 var($color-var);
+  background: var($color-var);
+}
+
+@mixin check-box($class-color-name, $color-var, $type:"") {
+  @if $type == "outline" {
+    &.outline:checked + .check-label:before {
+      background: none;
+      border: 1px solid var($color-var);
+    }
+  } @else {
+    &.#{$class-color-name}:checked + .check-label:before {
+      background: var($color-var);
+    }
+  }
+}
+
+.uniqly {
+
+  .form-check {
+    height: 20px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    position: relative;
+    font-size: 14px;
+
+    .check-input {
+      margin: 20px 0;
+      position: absolute;
+      opacity: 0;
+      font-size: 14px;
+
+      & + .check-label {
+        color: var(--gray-100);
+        position: relative;
+        left: 29px;
+        cursor: pointer;
+      }
+
+      // Box.
+      & + .check-label:before {
+        content: "";
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #e5e6e9;
+        border-radius: 4px;
+        background: #ffffff;
+        position: absolute;
+        top: -2px;
+        left: -29px;
+      }
+
+      &:checked + .check-label:before {
+        background: var(--gray-100);
+      }
+
+      // Disabled state .check-label.
+      &:disabled + .check-label {
+        color: var(--gray-400);
+        cursor: auto;
+      }
+
+      // Disabled box.
+      &.only-disabled:disabled + .check-label:before {
+        box-shadow: none;
+        background: none;
+      }
+
+      &:disabled + .check-label:before {
+        box-shadow: none;
+        background: var(--gray-400);
+      }
+
+      //   outline border
+      &.outline:disabled + .check-label:before {
+        box-shadow: none;
+        background: none;
+        border: 1px solid var(--gray-400);
+      }
+
+      // Checkmark. Could be replaced with an image
+      &:checked + .check-label:after {
+        content: "";
+        position: absolute;
+        left: -24px;
+        top: 7px;
+        width: 2px;
+        height: 2px;
+        @include checked-color(--global-primary);
+        transform: rotate(45deg);
+      }
+
+      // Disabled checked color
+      &.outline:disabled + .check-label:after {
+        @include checked-color(--global-secondary);
+      }
+
+      // Outline color variation
+      @include check-box("turquoise", --global-turquoise, "outline");
+      @include check-box("red", --global-red, "outline");
+      @include check-box("yellow", --global-yellow, "outline");
+      @include check-box("green", --global-green, "outline");
+      @include check-box("blue", --global-blue, "outline");
+      @include check-box("primary", --global-primary, "outline");
+
+      // Default color variation
+      @include check-box("turquoise", --global-turquoise);
+      @include check-box("red", --global-red);
+      @include check-box("yellow", --global-yellow);
+      @include check-box("green", --global-green);
+      @include check-box("blue", --global-blue);
+      @include check-box("primary", --global-primary);
+    }
+  }
+}
