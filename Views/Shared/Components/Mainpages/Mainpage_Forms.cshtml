@@ -1,145 +1,147 @@
 <div style="height:20px"></div>
-<div class="tab-nav-wrapper">
+<div class="tab-nav-wrapper" style="height: 400px">
     <div class="tab-nav">
-        <nav class="col-4">
-            <a class="active">Tab One</a>
-            <a>Tab Two</a>
-            <a>Tab Three</a>
-            <a>Tab Four</a>
+        <nav class="col-4 col-size-120">
+            <a subid="tab_one" class="tab-button active">Toggle switch</a>
+            <a subid="tab_two" class="tab-button">Radio buttons</a>
+            <a subid="tab_three" class="tab-button">Checkbox</a>
+            <a subid="tab_four" class="tab-button">Tab Four</a>
         </nav>
     </div>
-</div>
-<div style="padding: 2rem 2rem 0 2rem">
-    <div class="toggle-switch">
-        <input id="color-theme-changer" type="checkbox" class="switch" onchange="changeTheme()"/>
-        <label for="color-theme-changer">Dark mode</label>
-    </div>
-</div>
+    <div id="tab_one" class="tab-sub active">
+        <div style="padding: 2rem 2rem 0 2rem">
+            <div class="toggle-switch">
+                <input id="color-theme-changer" type="checkbox" class="switch" onchange="changeTheme()"/>
+                <label for="color-theme-changer">Dark mode</label>
+            </div>
+        </div>
 
+        @* TOGGLE SWITCHES *@
+        <div style="padding: 2rem 2rem 0 2rem">
+            <div class="toggle-switch red">
+                <input id="ts6" type="checkbox" class="switch" checked/>
+                <label class="ts6" for="s2d">medium size switch</label>
+            </div>
 
-@* TOGGLE SWITCHES *@
-<div style="padding: 2rem 2rem 0 2rem">
-    <div class="toggle-switch red">
-        <input id="ts6" type="checkbox" class="switch" checked/>
-        <label class="ts6" for="s2d">medium size switch</label>
-    </div>
+            <div class="toggle-switch green outline">
+                <input id="ts5" type="checkbox" class="switch outline" checked/>
+                <label for="ts5">Outline Switch Default </label>
+            </div>
 
-    <div class="toggle-switch green outline">
-        <input id="ts5" type="checkbox" class="switch outline" checked/>
-        <label for="ts5">Outline Switch Default </label>
-    </div>
+            <div class="toggle-switch yellow md">
+                <input id="ts6" type="checkbox" class="switch" checked/>
+                <label class="ts6" for="s2d">medium size switch</label>
+            </div>
 
-    <div class="toggle-switch yellow md">
-        <input id="ts6" type="checkbox" class="switch" checked/>
-        <label class="ts6" for="s2d">medium size switch</label>
+            <div class="toggle-switch turquoise lg">
+                <input id="ts7" type="checkbox" class="switch" checked/>
+                <label class="ts7" for="s2d">Large size switch</label>
+            </div>
+        </div>
     </div>
+    <div id="tab_two" class="tab-sub">
+        @* RADIO BUTTONS *@
+        <div style="padding: 2rem 2rem 0 2rem">
+            <div class="form-radio ">
+                <input type="radio" id="radio-3" name="radio-group-1" disabled/>
+                <label for="radio-3">Disabled Radio</label>
+            </div>
+            <div class="form-radio">
+                <input type="radio" class="red" id="radio-11" name="radio-group-2"/>
+                <label for="radio-11">Radio Primary</label>
+            </div>
+            <!--  Radio Secondary-->
+            <div class="form-radio">
+                <input
+                    type="radio"
+                    class="green"
+                    id="radio-12"
+                    name="radio-group-2" checked/>
+                <label for="radio-12">Radio Secondary</label>
+            </div>
+        </div>
 
-    <div class="toggle-switch turquoise lg">
-        <input id="ts7" type="checkbox" class="switch" checked/>
-        <label class="ts7" for="s2d">Large size switch</label>
+        <div style="padding: 2rem 2rem 0 2rem">
+            <div class="form-radio">
+                <input type="radio" class="primary outline" id="radio-21" name="radio-group"/>
+                <label for="radio-21">Outline Radio Primary</label>
+            </div>
+            <!--  Radio Secondary-->
+            <div class="form-radio">
+                <input checked
+                       type="radio"
+                       class="yellow outline"
+                       id="radio-22"
+                       name="radio-group"/>
+                <label for="radio-22">Outline Radio Secondary</label>
+            </div>
+            <!--  Radio Secondary2-->
+            <div class="form-radio">
+                <input
+                    type="radio"
+                    class="blue outline"
+                    id="radio-23"
+                    name="radio-group"/>
+                <label for="radio-23">Outline Radio Secondary 02</label>
+            </div>
+        </div>
     </div>
-</div>
-
-@* RADIO BUTTONS *@
-<div style="padding: 2rem 2rem 0 2rem">
-    <div class="form-radio ">
-        <input type="radio" id="radio-3" name="radio-group-1" disabled/>
-        <label for="radio-3">Disabled Radio</label>
-    </div>
-    <div class="form-radio">
-        <input type="radio" class="red" id="radio-11" name="radio-group-2"/>
-        <label for="radio-11">Radio Primary</label>
-    </div>
-    <!--  Radio Secondary-->
-    <div class="form-radio">
-        <input
-            type="radio"
-            class="green"
-            id="radio-12"
-            name="radio-group-2" checked/>
-        <label for="radio-12">Radio Secondary</label>
-    </div>
-</div>
-
-<div style="padding: 2rem 2rem 0 2rem">
-    <div class="form-radio">
-        <input type="radio" class="primary outline" id="radio-21" name="radio-group"/>
-        <label for="radio-21">Outline Radio Primary</label>
-    </div>
-    <!--  Radio Secondary-->
-    <div class="form-radio">
-        <input checked
-               type="radio"
-               class="yellow outline"
-               id="radio-22"
-               name="radio-group"/>
-        <label for="radio-22">Outline Radio Secondary</label>
-    </div>
-    <!--  Radio Secondary2-->
-    <div class="form-radio">
-        <input
-            type="radio"
-            class="blue outline"
-            id="radio-23"
-            name="radio-group"/>
-        <label for="radio-23">Outline Radio Secondary 02</label>
-    </div>
-</div>
-
-@* CHECKBOX *@
-<div style="padding: 2rem 2rem 0 2rem">
-    <!-- Checkbox  -->
-    <div class="form-check">
-        <input
-            class="check-input red"
-            id="checkbox-1"
-            type="checkbox"
-            value="value1"/>
-        <label class="check-label" for="checkbox-1">Default checkbox</label>
-    </div>
-    <!-- Checkbox  checked -->
-    <div class="form-check primary">
-        <input
-            class="check-input"
-            id="checkbox-2"
-            type="checkbox"
-            value="value1"
-            checked/>
-        <label class="check-label" for="checkbox-2">Checked checkbox</label>
-    </div>
-    <!-- Checkbox  disabled-->
-    <div class="form-check">
-        <input
-            class="check-input only-disabled"
-            id="checkbox-3"
-            type="checkbox"
-            value="value1"
-            disabled/>
-        <label class="check-label" for="checkbox-3">Disabled checkbox</label>
-    </div>
-    <!-- Checkbox  disabled-->
-    <div class="form-check">
-        <input
-            class="check-input"
-            id="checkbox-4"
-            type="checkbox"
-            value="value1"
-            disabled
-            checked/>
-        <label class="check-label" for="checkbox-4">
-            Disabled checked checkbox
-        </label
-        >
-    </div>
-    <!-- outline -->
-    <div class="form-check">
-        <input
-            class="check-input outline"
-            id="checkbox-7"
-            type="checkbox"
-            value="value1"
-            checked/>
-        <label class="check-label" for="checkbox-7">Outline Checkbox</label>
+    <div id="tab_three" class="tab-sub">
+        <div style="padding: 2rem 2rem 0 2rem">
+            <!-- Checkbox  -->
+            <div class="form-check">
+                <input
+                    class="check-input red"
+                    id="checkbox-1"
+                    type="checkbox"
+                    value="value1"/>
+                <label class="check-label" for="checkbox-1">Default checkbox</label>
+            </div>
+            <!-- Checkbox  checked -->
+            <div class="form-check primary">
+                <input
+                    class="check-input"
+                    id="checkbox-2"
+                    type="checkbox"
+                    value="value1"
+                    checked/>
+                <label class="check-label" for="checkbox-2">Checked checkbox</label>
+            </div>
+            <!-- Checkbox  disabled-->
+            <div class="form-check">
+                <input
+                    class="check-input only-disabled"
+                    id="checkbox-3"
+                    type="checkbox"
+                    value="value1"
+                    disabled/>
+                <label class="check-label" for="checkbox-3">Disabled checkbox</label>
+            </div>
+            <!-- Checkbox  disabled-->
+            <div class="form-check">
+                <input
+                    class="check-input"
+                    id="checkbox-4"
+                    type="checkbox"
+                    value="value1"
+                    disabled
+                    checked/>
+                <label class="check-label" for="checkbox-4">
+                    Disabled checked checkbox
+                </label
+                >
+            </div>
+            <!-- outline -->
+            <div class="form-check">
+                <input
+                    class="check-input outline"
+                    id="checkbox-7"
+                    type="checkbox"
+                    value="value1"
+                    checked/>
+                <label class="check-label" for="checkbox-7">Outline Checkbox</label>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -157,9 +159,8 @@
             $(this).addClass('active').siblings().removeClass('active');
         });
     });
-    
+    tabSwitcher();
 function changeTheme() {
-     
     let chkbox = document.getElementById('color-theme-changer');
     if(chkbox.checked) {
         trans()
@@ -168,6 +169,55 @@ function changeTheme() {
         trans()
         document.documentElement.setAttribute('color-theme', 'light')
     }
+}
+
+function tabSwitcher() {
+   const $tabButton = $('.tab-nav');
+   
+   $($tabButton).each(function() {
+       $(this).on('click', 'a', function(e){
+           const subID = $(this).attr('subid');
+           const $parentTabEl = $(this).closest('.tab-nav-wrapper');
+           
+           const currentSubEl = $($parentTabEl).find('.tab-sub.active');
+           const nextSubEl = $($parentTabEl).find('#' + subID);
+           const serverLink = $(this).attr('serverlink');
+           
+           //$(subEl).removeClass('tab-transition-in');
+           if (typeof serverLink !== 'undefined' && serverLink !== false) {
+           // $.ajax({
+           //                type: "POST", url: "/home/getpage", data: {idf: 'contact', uid: uid},
+           //                beforeSend: function () {
+           //                    $($mainpage).addClass('tab-transition-out');
+           //                },
+           //                success: function (returndata) {
+           //                    setTimeout(
+           //                        function () {
+           //                            //$($mainpage).removeClass('tab-transition-out');
+           //                            //$($mainpage).addClass('tab-transition-in');
+           //                            //$mainpage.html(returndata);
+           //                            //runFunction(uid + '_func');
+           //                        }, 200); // Same time as animation effect
+           //                }
+           //            });    
+           }
+           else {
+               $(currentSubEl).removeClass('tab-transition-in');
+               $(currentSubEl).addClass('tab-transition-out');
+                 setTimeout(
+                     function () {
+                         $(currentSubEl).removeClass('active');
+                         $(nextSubEl).removeClass('tab-transition-out');
+                         $(nextSubEl).addClass('tab-transition-in');
+                         $(nextSubEl).addClass('active');
+                         
+                         //$mainpage.html(returndata);
+                         //runFunction(uid + '_func');
+                     }, 60); // Same time as animation effect
+           }
+               
+       });
+   });
 }
 </script>
 <script src="js/forms.js"></script>
