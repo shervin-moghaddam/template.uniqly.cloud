@@ -1,4 +1,4 @@
-function passdordController() {
+function passwordController() {
     var x = document.getElementById("passFormId");
     var icon = document.getElementById("passwordIcon");
     var icon2 = document.getElementById("passwordIcon2");
