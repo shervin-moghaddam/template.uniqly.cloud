@@ -1,1 +1,141 @@
- 
+// Input Fields
+.custom-input-field {
+  margin-bottom: 30px;
+
+  .input-label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--gray-100);
+    font-weight: 400;
+  }
+}
+
+.input-field {
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+
+  textarea,
+  input {
+    color: var(--gray-100);
+    display: block;
+    width: 100%;
+    border: 1px solid var(--gray-600);
+    border-radius: 6px;
+    padding: 15px 18px;
+
+    &:focus {
+      border: 1px solid var(--gray-100);
+      outline: none;
+    }
+
+    &:disabled {
+      background: var(--gray-700);
+    }
+  }
+
+  &.rounded {
+    input {
+      border-radius: 800px;
+      padding: 15px 24px;
+    }
+  }
+
+  &.icon-left {
+    input {
+      padding-left: 48px;
+    }
+
+    position: relative;
+
+    .form-icon {
+      position: absolute;
+      top: 13px;
+      left: 18px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &.icon-right {
+    input {
+      padding-right: 48px;
+    }
+
+    position: relative;
+
+    .form-icon {
+      position: absolute;
+      top: 13px;
+      right: 18px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  & .error-text {
+    font-weight: 400;
+    color: #EB5757;
+  }
+
+  & .input-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #E5E6E9;
+    border-radius: 6px;
+    position: relative;
+
+    & .icon {
+      &:hover {
+        cursor: pointer;
+      }
+
+      position: absolute;
+      right: 10px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      opacity: 30%;
+      width: 18px;
+      height: 18px;
+      height: 100%;
+    }
+
+    & .icon.hide {
+      display: none;
+    }
+  }
+}
