@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $(".close-alert").click(function(){
+      $(this).parent().parent().removeClass("show");
+    });
+});
+$(document).ready(function(){
+  $(".close-popup").click(function(){
+    $(this).parent().parent().parent().removeClass("show");
+  });
+});
