@@ -2,7 +2,8 @@ namespace template.Models;
 public class PopupDialogModel
     {
         // Setup
-        public int DialogType { get; set; } // 0: Default, 1: Confirmation, 2: Error, 3: Warning, 4: Question 
+        public DialogDesignTypeEnum DialogDesign { get; set; } 
+        public DialogTypeEnum DialogType { get; set; }  
         public string TitleCustomText { get; set; }
         public string TitleTextLangKey { get; set; }
         public bool ShowCloseButton { get; set; }
@@ -49,5 +50,20 @@ public class PopupDialogModel
             public string dlg { get; set; }
             public string btnLst { get; set; }
             public int dialogNo { get; set; }
+        }
+
+        public enum DialogDesignTypeEnum
+        {
+            Default = 0,
+            HollowWithIcon = 1
+        }
+        
+        public enum DialogTypeEnum
+        {
+            Default = 0,
+            Confirmation = 1,
+            Error = 2,
+            Warning = 3,
+            Question = 4
         }
     }

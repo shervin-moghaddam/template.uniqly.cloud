@@ -1,0 +1,168 @@
+@model template.Models.PopupDialogModel
+
+@switch ((int)Model.DialogDesign)
+{
+    default:
+        switch ((int)Model.DialogType)
+        {
+            default: // Info
+                <div class="alert box-alert all-bg info-alert show">
+                    <div class="alert-body">
+                        <div class="alert-icon">
+                            <i class="fa-regular fa-circle-info"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h5 class="alert-header dark-title">Info</h5>
+                            <p>
+                                We’ve updated a few things. Check the
+                                <a class="link" href="#"> Path notes!</a>
+                            </p>
+                        </div>
+                        <div class="close-alert">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 1: // Success
+                <div class="alert box-alert all-bg success-alert show">
+                    <div class="alert-body">
+                        <div class="alert-icon">
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h5 class="alert-header dark-title">Error</h5>
+                            <p>
+                                That password isn’t right. Can we help you
+                                <a class="link" href="#">recover your password?</a>
+                            </p>
+                        </div>
+                        <div class="close-alert">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 2: // Error
+                <div class="alert box-alert error-alert all-bg show">
+                    <div class="alert-body">
+                        <div class="alert-icon">
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h5 class="alert-header dark-title">Error</h5>
+                            <p>
+                                That password isn’t right. Can we help you
+                                <a class="link" href="#">recover your password?</a>
+                            </p>
+                        </div>
+                        <div class="close-alert">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 3: // Warning
+                <div class="alert box-alert warning-alert all-bg show">
+                    <div class="alert-body">
+                        <div class="alert-icon">
+                            <i class="fa-regular fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h5 class="alert-header dark-title">Warning</h5>
+                            <p>
+                                Looks like you’ve exceeded your limit.
+                                <a class="link" href="#">Need an upgrade?</a>
+                            </p>
+                        </div>
+                        <div class="close-alert">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                break;
+        }
+        break;
+    case 1:
+        switch ((int)Model.DialogType)
+        {
+            default:
+                <div class="alert box-alert info-alert show">
+                    <div class="alert-body">
+                        <div class="alert-icon">
+                            <i class="fa-regular fa-circle-info"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h5 class="alert-header">Info</h5>
+                            <p>
+                                We’ve updated a few things. Check the
+                                <a class="link" href="#"> Path notes!</a>
+                            </p>
+                        </div>
+                        <div class="close-alert">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 1: // Success
+                <div class="alert box-alert success-alert show">
+                    <div class="alert-body">
+                        <div class="alert-icon">
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h5 class="alert-header">Error</h5>
+                            <p>
+                                That password isn’t right. Can we help you
+                                <a class="link" href="#">recover your password?</a>
+                            </p>
+                        </div>
+                        <div class="close-alert">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 2: // Error
+                <div class="alert box-alert error-alert show">
+                    <div class="alert-body">
+                        <div class="alert-icon">
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h5 class="alert-header">Error</h5>
+                            <p>
+                                That password isn’t right. Can we help you
+                                <a class="link" href="#">recover your password?</a>
+                            </p>
+                        </div>
+                        <div class="close-alert">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 3: // Warning
+                <div class="alert box-alert warning-alert show">
+                    <div class="alert-body">
+                        <div class="alert-icon">
+                            <i class="fa-regular fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="alert-content">
+                            <h5 class="alert-header">Warning</h5>
+                            <p>
+                                Looks like you’ve exceeded your limit.
+                                <a class="link" href="#">Need an upgrade?</a>
+                            </p>
+                        </div>
+                        <div class="close-alert">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+
+                break;
+        }
+        break;
+}
