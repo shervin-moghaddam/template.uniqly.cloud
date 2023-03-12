@@ -19,7 +19,7 @@ public class PopupDialogHelperClass
     /// </summary>
     /// <param name="Identifier"></param>
     /// <returns></returns>
-    public static PopupDialogModel CreateDialogOptions(int DialogNo)
+    public static PopupDialogModel? CreateDialogOptions(int DialogNo)
     {
         PopupDialogModel m;
 
@@ -27,7 +27,7 @@ public class PopupDialogHelperClass
         {
             100 => new PopupDialogModel // Common - On close - Changes not saved
             {
-                DialogType = (int)PopupDialogTypes.Question,
+                DialogType = PopupDialogModel.DialogTypeEnum.Question, //(int)PopupDialogTypes.Question,
                 ShowCloseButton = true,
                 ElementID = $"dlg_{DialogNo}",
                 DialogMaxWidth = 450,
@@ -40,7 +40,7 @@ public class PopupDialogHelperClass
             },
             1001 => new PopupDialogModel // PLE Changes not saved
             {
-                DialogType = (int)PopupDialogTypes.Question,
+                DialogType = PopupDialogModel.DialogTypeEnum.Question ,
                 ShowCloseButton = true,
                 ElementID = $"pledlg_{DialogNo}",
                 DialogMaxWidth = 450,
@@ -53,7 +53,7 @@ public class PopupDialogHelperClass
             },
             1009 => new PopupDialogModel // Auto-align items in AdvGrid (compact())
             {
-                DialogType = (int)PopupDialogTypes.Question,
+                DialogType = PopupDialogModel.DialogTypeEnum.Question,
                 ShowCloseButton = true,
                 ElementID = $"pledlg_{DialogNo}",
                 DialogMaxWidth = 450,
@@ -66,7 +66,7 @@ public class PopupDialogHelperClass
             },
             1010 => new PopupDialogModel // Delete page
             {
-                DialogType = (int)PopupDialogTypes.Warning,
+                DialogType = PopupDialogModel.DialogTypeEnum.Warning,
                 ShowCloseButton = true,
                 ElementID = $"pledlg_{DialogNo}",
                 DialogMaxWidth = 450,
@@ -79,7 +79,7 @@ public class PopupDialogHelperClass
             },
             1050 => new PopupDialogModel // Delete variant
             {
-                DialogType = (int)PopupDialogTypes.Warning,
+                DialogType = PopupDialogModel.DialogTypeEnum.Warning,
                 ShowCloseButton = true,
                 ElementID = $"varedlg_{DialogNo}",
                 DialogMaxWidth = 450,
@@ -99,8 +99,10 @@ public class PopupDialogHelperClass
     /// </summary>
     /// <param name="Identifier"></param>
     /// <returns></returns>
-    private static PopupDialogModel.PopupDialogButton CreateDialogButton(string Identifier)
+    private static PopupDialogModel.PopupDialogButton CreateDialogButton(string? Identifier)
     {
+        if (string.IsNullOrEmpty(Identifier)) return null!;
+        
         return Identifier.ToLower() switch
         {
             "ok" => new PopupDialogModel.PopupDialogButton
@@ -118,8 +120,7 @@ public class PopupDialogHelperClass
             "no" => new PopupDialogModel.PopupDialogButton
             {
                 ColorClass = "red", TextLangKey = "Button_No", ElementID = "dialog_no"
-            },
-            _ => null // Returning null by default (but shouldn't happen)
+            }
         };
     }
 }

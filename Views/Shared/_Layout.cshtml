@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Localization
 @using Microsoft.AspNetCore.Mvc.Localization
 @using Microsoft.Extensions.Options
+@using template.Code
 @using template.Models
 @using template.Resources
 @inject ProjectSetupClass projectSetup
@@ -43,20 +44,23 @@
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"/>
+    
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
 
     <environment include="Development">
-        @* JS *@
+        @JSSourceFiles.GetStartupJS()
     </environment>
     <environment exclude="Development">
-        @* JS *@
+        @* @JSSourceFiles.GetStartupJS("min") *@
     </environment>
 </head>
 
 <body class="uniqly">
-@RenderBody()
+@RenderBody() 
 </body>
-@await RenderSectionAsync("Scripts", required: false)
+
+@* @await RenderSectionAsync("Scripts", required: false) *@
+
 </html>

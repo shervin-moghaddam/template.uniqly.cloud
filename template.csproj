@@ -21,12 +21,17 @@
         <PackageReference Include="WebMarkupMin.AspNetCore7" Version="2.13.5" />
     </ItemGroup>
 
+<!--    <ItemGroup>-->
+<!--      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />-->
+<!--    </ItemGroup>-->
+
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+      <Folder Include="wwwroot\js\min" />
+      <Folder Include="wwwroot\js\obfuscated" />
     </ItemGroup>
 
 
     <Target Name="PreCompileTarget" BeforeTargets="Build">
-        <Exec Command="gulp compileSass" />
+        <Exec Command="gulp" />
     </Target>
 </Project>
